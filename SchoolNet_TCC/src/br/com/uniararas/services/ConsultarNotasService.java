@@ -2,47 +2,56 @@ package br.com.uniararas.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
+import br.com.uniararas.beans.Aluno;
+import br.com.uniararas.beans.Materias;
+import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.util.Constantes;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class ConsultarNotasService {
 
-	public ArrayList<HashMap<String,String>> obterNotas() throws JSONException {
-		JSONArray materias = null;
+	private WebServiceCall webServiceCall;
+	
+	public ConsultarNotasService(){
+		this.webServiceCall = new WebServiceCall();
+	}
+	
+	public ArrayList<HashMap<String,String>> obterNotas(Aluno aluno) throws Exception {
 		ArrayList<HashMap<String,String>> listaMaterias = null;
-		JSONObject json = null;
-		
 		try {
-			//TODO: metodo que irá buscar dados no webService
-			json = new JSONObject("{\"materias\":[{\"nomemateria\":\"SIF034-Engenharia de Software IV \",\"primeiranota\":\"10\",\"notaspa\":\"10\",\"segundanota\":\"10\",\"mediafinal\":\"10\" },{\"nomemateria\":\"SIF043-Gerência de Projetos\",\"primeiranota\":\"10\",\"notaspa\":\"10\",\"segundanota\":\"10\",\"mediafinal\":\"10\" },{\"nomemateria\":\"SIF040-Projeto de Sistemas I\",\"primeiranota\":\"10\",\"notaspa\":\"10\",\"segundanota\":\"10\",\"mediafinal\":\"10\" },{\"nomemateria\":\"SIF039-Redes de Computadores II\",\"primeiranota\":\"10\",\"notaspa\":\"10\",\"segundanota\":\"10\",\"mediafinal\":\"10\" },{\"nomemateria\":\"SIF044-Tópicos Avançados em SI I\",\"primeiranota\":\"10\",\"notaspa\":\"10\",\"segundanota\":\"10\",\"mediafinal\":\"10\" },{\"nomemateria\":\"SIF070-Tópicos Especiais em Sistemas de Informação\",\"primeiranota\":\"10\",\"notaspa\":\"10\",\"segundanota\":\"10\",\"mediafinal\":\"10\" },{\"nomemateria\":\"SIF068-Tópicos em Linguagem de Programação\",\"primeiranota\":\"10\",\"notaspa\":\"10\",\"segundanota\":\"10\",\"mediafinal\":\"10\" }]}");
-			materias = json.getJSONArray(Constantes.TAG_MATERIAS);
+			String[] resposta = webServiceCall.post(aluno, Constantes.URL_OBTER_NOTAS);
+			
+			if(!resposta[0].equals("200"))
+				throw new Exception("Erro ao obter notas.");
+			
+			java.lang.reflect.Type listType = new TypeToken<List<Materias>>() {}.getType();
+			List<Materias> materias = new Gson().fromJson( resposta[1].trim() , listType);
+			
 			listaMaterias = new ArrayList<HashMap<String,String>>();
 			
-			for(int i = 0; i < materias.length(); i++){
-				JSONObject c = materias.getJSONObject(i);
-				
-				String nomeMateria = c.getString(Constantes.TAG_NOME_MATERIA);
-				String primeiraNota = c.getString(Constantes.TAG_PRIMEIRA_NOTA);
-				String notaSPA = c.getString(Constantes.TAG_NOTA_SPA);
-				String segundaNota = c.getString(Constantes.TAG_SEGUNDA_NOTA);
-				String mediaFinal = c.getString(Constantes.TAG_MEDIA_FINAL);
+			for (Materias materia : materias){
 				
 				HashMap<String, String> map = new HashMap<String, String>();
 				
-				map.put(Constantes.TAG_NOME_MATERIA, nomeMateria);
-				map.put(Constantes.TAG_PRIMEIRA_NOTA, primeiraNota);
-				map.put(Constantes.TAG_NOTA_SPA, notaSPA);
-				map.put(Constantes.TAG_SEGUNDA_NOTA, segundaNota);
-				map.put(Constantes.TAG_MEDIA_FINAL, mediaFinal);
+				map.put(Constantes.TAG_NOME_MATERIA, materia.getNomemateria());
+				map.put(Constantes.TAG_PRIMEIRA_NOTA, materia.getPrimeiranota());
+				map.put(Constantes.TAG_NOTA_SPA, materia.getNotaspa());
+				map.put(Constantes.TAG_SEGUNDA_NOTA,materia.getSegundanota());
+				map.put(Constantes.TAG_MEDIA_FINAL, materia.getMediafinal());
 
 				listaMaterias.add(map);
 			}
-		} catch (JSONException e) {
-			throw new JSONException("Não foi possivel fazer a converção para JSon");	
+
+		}catch (JSONException e) {
+				throw new JSONException("NÃ£o foi possivel exibir os dados.");
+		} catch (Exception e) {
+			throw new JSONException(e.getMessage());	
 		}
 		return listaMaterias;
 	}

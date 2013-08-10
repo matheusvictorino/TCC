@@ -1,19 +1,21 @@
 package br.com.uniararas.actvity;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import br.com.uniararas.beans.Aluno;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class MenuActivity extends Activity {
 	
-	private String aluno;
+	public static List<Aluno> aluno;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,30 +25,18 @@ public class MenuActivity extends Activity {
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
 		TextView textCurso = (TextView) findViewById(R.id.textView1);
-		textCurso.setText("Sistemas de Informação");
+		
 
 		Intent intent = getIntent();
-		aluno = intent.getStringExtra("aluno");
-		String nome = null;
-		String ra=null;
+		String alunoJson = intent.getStringExtra("aluno");
 		
-		try{
-			JSONArray jArray = new JSONArray(aluno);
-			JSONObject json_data = new JSONObject();
-			for(int i=0;i<jArray.length();i++){
-				json_data = jArray.getJSONObject(i);
-				ra = json_data.getString("RA");
-				nome = json_data.getString("NOME");
-			}
+		java.lang.reflect.Type listType = new TypeToken<List<Aluno>>() {}.getType();
+		aluno = new Gson().fromJson( alunoJson.trim() , listType);
 			
-			textNome.setText(nome);
-			textRa.setText(ra);
+		textNome.setText(aluno.get(0).getNome());
+		textRa.setText(aluno.get(0).getRa());
+		textCurso.setText("Sistemas de Informação");
 					
-			}catch(Exception e){
-			Log.e("FUDEU:", e.getMessage());
-			Log.e("Valor:", aluno);
-
-			}
 	}
 
 	@Override
@@ -58,12 +48,14 @@ public class MenuActivity extends Activity {
 	
 	public void onClickConsultarNotas(View view) {
 		Intent in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
+		in.putExtra("aluno", new Gson().toJson(aluno.get(0)));
 		startActivity(in);
 
 	}
 	
 	public void onClickConsultarFaltas(View view) {
 		Intent in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
+		in.putExtra("aluno", new Gson().toJson(aluno.get(0)));
 		startActivity(in);
 
 	}

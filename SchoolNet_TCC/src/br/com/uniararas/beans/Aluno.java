@@ -3,10 +3,34 @@ package br.com.uniararas.beans;
 
 public class Aluno {
 	
-	public String name;
+	private String nome;
 	
-	public String ra;
+	private String ra;
 	
-	public String senha;
+	private String senha;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getRa() {
+		return ra;
+	}
+
+	public void setRa(String ra) {
+		this.ra = ra;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 }

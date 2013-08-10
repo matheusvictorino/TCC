@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import br.com.uniararas.beans.Aluno;
-import br.com.uniararas.resources.JSONParser;
+import br.com.uniararas.services.LoginService;
 
 public class LoginActivity extends Activity {
 
@@ -36,6 +36,8 @@ public class LoginActivity extends Activity {
     }
     
 	public boolean onClickLogin(View view) {
+		Context context = getApplicationContext();
+		int duration = Toast.LENGTH_SHORT;
 		
 		if(!testConnection()){
 			toast("Você Precisa estar conectado a internet antes de continuar");
@@ -53,30 +55,28 @@ public class LoginActivity extends Activity {
 		}
 		
 		Aluno aluno = new Aluno();
-		aluno.ra = ra.getText().toString();
-		aluno.senha = senha.getText().toString();
+		aluno.setRa(ra.getText().toString()); 
+		aluno.setSenha(senha.getText().toString());
 		
-		JSONParser jsonparser = new JSONParser();
-		
-		result = jsonparser.post(aluno);
-		CharSequence text;
-		int duration = Toast.LENGTH_SHORT;
-		
-		if(!result.equals(null)){
-			
-			if(result[0].equals("200")){
+		LoginService loginService = new LoginService();
+		try{
+			result = loginService.autenticarUsuario(aluno);
+			if(result != null){
 				Intent in = new Intent(getApplicationContext(), MenuActivity.class);
 				in.putExtra("aluno", result[1]);
 				startActivity(in);
 				return true;
-
+			}else {
+				Toast toast = Toast.makeText(context, "Ocorreu um erro.", duration);
+				toast.show();getApplicationContext();
+				return false;	
 			}
+		}catch(Exception e){
+			Toast toast = Toast.makeText(context, e.getMessage(), duration);
+			toast.show();getApplicationContext();
+			return false;		
 		}
-		text="Erro ao efetuar login!";
-		Context context = getApplicationContext();
-		Toast toast = Toast.makeText(context, text, duration);
-		toast.show();getApplicationContext();
-		return false;		
+		
 	}
 	
 	private boolean testConnection() { 
