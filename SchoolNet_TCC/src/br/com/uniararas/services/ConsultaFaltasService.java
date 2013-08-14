@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.json.JSONException;
 
-import br.com.uniararas.beans.Aluno;
 import br.com.uniararas.beans.Materias;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.util.Constantes;
@@ -16,11 +15,11 @@ import com.google.gson.reflect.TypeToken;
 
 public class ConsultaFaltasService {
 	
-	public ArrayList<HashMap<String,String>> obterFaltas(Aluno aluno) throws Exception {
+	public ArrayList<HashMap<String,String>> obterFaltas() throws Exception {
 		ArrayList<HashMap<String,String>> listaMaterias = null;
 		try {
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
-			String[] resposta = webServiceCall.post(aluno, Constantes.URL_OBTER_FALTAS);
+			String[] resposta = webServiceCall.post(null, Constantes.URL_OBTER_FALTAS);
 			
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao obter faltas.");

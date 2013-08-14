@@ -33,7 +33,7 @@ public class ConsultaFaltasActivity extends ListActivity {
 		textCurso.setText("Sistemas de Informação");
 
 		try{
-			ArrayList<HashMap<String, String>> listaMaterias = consultaFaltasService.obterFaltas(MenuActivity.aluno.get(0));
+			ArrayList<HashMap<String, String>> listaMaterias = consultaFaltasService.obterFaltas();
 			
 			ListAdapter adapter = new SimpleAdapter(this, listaMaterias,
 					R.layout.list_item_faltas,
