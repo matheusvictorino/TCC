@@ -30,6 +30,21 @@ public class WebServiceCall {
 	public String[] result;
 	private static final int JSON_CONNECTION_TIMEOUT = 3000;
 	private static final int JSON_SOCKET_TIMEOUT = 5000;
+	private DefaultHttpClient httpclient;
+	private BasicHttpParams httpParameters;
+	private static WebServiceCall instance;
+	
+	private WebServiceCall(){
+		httpParameters = new BasicHttpParams();
+		setTimeOut(httpParameters);
+		httpclient = new DefaultHttpClient(httpParameters);
+	}
+	
+	public static WebServiceCall getInstance(){
+		if(instance == null)
+			instance = new WebServiceCall();
+		return instance;
+	}
 	
 	private void setTimeOut(HttpParams params) {
 		HttpConnectionParams.setConnectionTimeout(params,
@@ -43,10 +58,7 @@ public class WebServiceCall {
 			String url = Constantes.URL_PADRAO + urlLocal;
 
 			Gson gson = new Gson();
-			BasicHttpParams httpParameters = new BasicHttpParams();
-			setTimeOut(httpParameters);
-			DefaultHttpClient httpclient = new DefaultHttpClient(httpParameters);
-
+			
 			HttpPost httpPost = new HttpPost(new URI(url));
 			httpPost.setHeader("Content-type", "application/json");
 			httpPost.setHeader("Authorization",	Constantes.AUTHORIZATION);

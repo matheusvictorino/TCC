@@ -6,15 +6,10 @@ import br.com.uniararas.util.Constantes;
 
 
 public class LoginService {
-
-	private WebServiceCall webServiceCall;
-	
-	public LoginService(){
-		this.webServiceCall = new WebServiceCall();
-	}	
 	
 	public String[] autenticarUsuario(Aluno aluno) throws Exception{
 		try{
+			WebServiceCall webServiceCall = WebServiceCall.getInstance();
 			String resposta[] = webServiceCall.post(aluno, Constantes.URL_AUTENTICAR);
 			
 			if(!resposta[0].equals("200"))

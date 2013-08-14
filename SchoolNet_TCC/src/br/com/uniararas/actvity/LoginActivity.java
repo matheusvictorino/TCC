@@ -56,10 +56,17 @@ public class LoginActivity extends Activity {
 		
 		Aluno aluno = new Aluno();
 		aluno.setRa(ra.getText().toString()); 
-		aluno.setSenha(senha.getText().toString());
 		
-		LoginService loginService = new LoginService();
+		try {
+			aluno.setSenha(senha.getText().toString());
+		} catch (Exception e) {
+			Toast toast = Toast.makeText(context, e.getMessage(), duration);
+			toast.show();getApplicationContext();
+			return false;	
+		}
+		
 		try{
+			LoginService loginService = new LoginService();
 			result = loginService.autenticarUsuario(aluno);
 			if(result != null){
 				Intent in = new Intent(getApplicationContext(), MenuActivity.class);

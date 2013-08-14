@@ -16,15 +16,10 @@ import com.google.gson.reflect.TypeToken;
 
 public class ConsultarNotasService {
 
-	private WebServiceCall webServiceCall;
-	
-	public ConsultarNotasService(){
-		this.webServiceCall = new WebServiceCall();
-	}
-	
 	public ArrayList<HashMap<String,String>> obterNotas(Aluno aluno) throws Exception {
 		ArrayList<HashMap<String,String>> listaMaterias = null;
 		try {
+			WebServiceCall webServiceCall = WebServiceCall.getInstance();
 			String[] resposta = webServiceCall.post(aluno, Constantes.URL_OBTER_NOTAS);
 			
 			if(!resposta[0].equals("200"))
