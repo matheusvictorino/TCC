@@ -55,7 +55,7 @@ public class LoginActivity extends Activity {
 		}
 		
 		Aluno aluno = new Aluno();
-		aluno.setRa(ra.getText().toString()); 
+		aluno.ra = ra.getText().toString(); 
 		
 		try {
 			aluno.setSenha(senha.getText().toString());

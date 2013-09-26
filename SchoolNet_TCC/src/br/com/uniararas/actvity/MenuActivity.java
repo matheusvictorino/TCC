@@ -1,5 +1,6 @@
 package br.com.uniararas.actvity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -15,7 +16,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class MenuActivity extends Activity {
 	
-	public static List<Aluno> aluno;
+	public static Aluno aluno;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +30,11 @@ public class MenuActivity extends Activity {
 
 		Intent intent = getIntent();
 		String alunoJson = intent.getStringExtra("aluno");
-		
-		java.lang.reflect.Type listType = new TypeToken<List<Aluno>>() {}.getType();
-		aluno = new Gson().fromJson( alunoJson.trim() , listType);
-			
-		textNome.setText(aluno.get(0).getNome());
-		textRa.setText(aluno.get(0).getRa());
-		textCurso.setText("Sistemas de Informação");
+		Gson gson = new Gson();
+		aluno = gson.fromJson( alunoJson , Aluno.class);
+		textNome.setText(aluno.nomealuno);
+		textRa.setText(aluno.ra);
+		textCurso.setText(aluno.email);
 					
 	}
 
@@ -48,14 +47,14 @@ public class MenuActivity extends Activity {
 	
 	public void onClickConsultarNotas(View view) {
 		Intent in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
-		in.putExtra("aluno", new Gson().toJson(aluno.get(0)));
+		in.putExtra("aluno", new Gson().toJson(aluno));
 		startActivity(in);
 
 	}
 	
 	public void onClickConsultarFaltas(View view) {
 		Intent in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
-		in.putExtra("aluno", new Gson().toJson(aluno.get(0)));
+		in.putExtra("aluno", new Gson().toJson(aluno));
 		startActivity(in);
 
 	}

@@ -15,11 +15,11 @@ import com.google.gson.reflect.TypeToken;
 
 public class ConsultarNotasService {
 
-	public ArrayList<HashMap<String,String>> obterNotas() throws Exception {
+	public ArrayList<HashMap<String,String>> obterNotas(String ano , String semestre) throws Exception {
 		ArrayList<HashMap<String,String>> listaMaterias = null;
 		try {
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
-			String[] resposta = webServiceCall.post(null, Constantes.URL_OBTER_NOTAS);
+			String[] resposta = webServiceCall.get(ano,semestre, Constantes.URL_OBTER_NOTAS);
 			
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao obter notas.");

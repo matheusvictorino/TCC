@@ -15,11 +15,11 @@ import com.google.gson.reflect.TypeToken;
 
 public class ConsultaFaltasService {
 	
-	public ArrayList<HashMap<String,String>> obterFaltas() throws Exception {
+	public ArrayList<HashMap<String,String>> obterFaltas(String ano ,String semestre) throws Exception {
 		ArrayList<HashMap<String,String>> listaMaterias = null;
 		try {
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
-			String[] resposta = webServiceCall.post(null, Constantes.URL_OBTER_FALTAS);
+			String[] resposta = webServiceCall.get(ano,semestre, Constantes.URL_OBTER_FALTAS);
 			
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao obter faltas.");

@@ -26,13 +26,19 @@ public interface Constantes {
 	
 	String TAG_NUMERO_FALTAS_LIMITE = "numerofaltaslimite";
 	
-	String URL_PADRAO = "http://192.168.1.101/webservicetcc/";
+	String URL_PADRAO = "https://www1.uniararas.br/schoolnet/2013/consulta-notas/";
 	
-	String URL_AUTENTICAR = "autenticar";
+	String URL_AUTENTICAR = "autentica.php";
 	
-	String URL_OBTER_NOTAS = "notas";
+	String URL_OBTER_NOTAS = "notas.php";
 
-	String URL_OBTER_FALTAS = "faltas";
+	String URL_OBTER_FALTAS = "faltas.php";
+	
+	String URL_OBTER_ANO_SEMESTRE = "ano-semestre.php";
 
-	String AUTHORIZATION = "da39a3ee5e6b4b0d3255bfef95601890afd80709";
+	String AUTHORIZATION = "D52DAB2D6B0D0C8E64CBF6777077F6B7";
+	
+	String URL_ANO_LETIVO = "anoletivo";
+	
+	String URL_SEMESTRE = "semestre";
 }

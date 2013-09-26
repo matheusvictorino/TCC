@@ -28,12 +28,12 @@ public class ConsultaFaltasActivity extends ListActivity {
 		TextView textRa = (TextView) findViewById(R.id.textView11);
 		TextView textCurso = (TextView) findViewById(R.id.textView1);
 			
-		textNome.setText(MenuActivity.aluno.get(0).getNome());
-		textRa.setText(MenuActivity.aluno.get(0).getRa());
+		textNome.setText(MenuActivity.aluno.nomealuno);
+		textRa.setText(MenuActivity.aluno.ra);
 		textCurso.setText("Sistemas de Informação");
 
 		try{
-			ArrayList<HashMap<String, String>> listaMaterias = consultaFaltasService.obterFaltas();
+			ArrayList<HashMap<String, String>> listaMaterias = consultaFaltasService.obterFaltas("","");
 			
 			ListAdapter adapter = new SimpleAdapter(this, listaMaterias,
 					R.layout.list_item_faltas,

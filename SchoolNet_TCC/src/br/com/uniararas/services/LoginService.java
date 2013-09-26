@@ -10,7 +10,7 @@ public class LoginService {
 	public String[] autenticarUsuario(Aluno aluno) throws Exception{
 		try{
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
-			String resposta[] = webServiceCall.post(aluno, Constantes.URL_AUTENTICAR);
+			String resposta[] = webServiceCall.autenticacao(aluno, Constantes.URL_AUTENTICAR);
 			
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao efetuar login.");
