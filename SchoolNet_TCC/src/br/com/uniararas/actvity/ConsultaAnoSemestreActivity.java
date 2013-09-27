@@ -3,10 +3,17 @@ package br.com.uniararas.actvity;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.google.gson.Gson;
+
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +39,9 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 		textRa.setText(MenuActivity.aluno.ra);
 		textCurso.setText(MenuActivity.aluno.email);
 		
+		Intent intent = getIntent();
+		final String tipoConsulta = intent.getStringExtra("consulta");
+		
 		try{
 			ArrayList<HashMap<String, String>> listaAnoLetivo = consultaAnoSemestreService.obterAnoSemestre();
 			
@@ -41,6 +51,28 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 							R.id.anoletivo, R.id.semestre});
 	
 			setListAdapter(adapter);
+			
+			ListView lv = getListView();
+			 
+	        lv.setOnItemClickListener(new OnItemClickListener() {
+	 
+	            @Override
+	            public void onItemClick(AdapterView<?> parent, View view,
+	                    int position, long id) {
+	                String anoletivo = ((TextView) view.findViewById(R.id.anoletivo)).getText().toString();
+	                String semestre = ((TextView) view.findViewById(R.id.semestre)).getText().toString();
+	                Intent in = null;
+	                if(tipoConsulta.equals("notas")){
+	                	in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
+	                }else{
+	                	in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
+	                }
+	        		in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
+	        		in.putExtra("anoletivo", anoletivo);
+	        		in.putExtra("semestre", semestre);
+	        		startActivity(in);
+	            }
+	        });
 		}catch(Exception e){
 			Toast toast = Toast.makeText(context, e.getMessage(), duration);
 			toast.show();getApplicationContext();

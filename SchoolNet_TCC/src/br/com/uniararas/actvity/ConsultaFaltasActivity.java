@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
@@ -32,8 +33,12 @@ public class ConsultaFaltasActivity extends ListActivity {
 		textRa.setText(MenuActivity.aluno.ra);
 		textCurso.setText(MenuActivity.aluno.email);
 
+		Intent intent = getIntent();
+		String anoletivo = intent.getStringExtra("anoletivo");
+		String semestre = intent.getStringExtra("semestre");
+		
 		try{
-			ArrayList<HashMap<String, String>> listaMaterias = consultaFaltasService.obterFaltas("","");
+			ArrayList<HashMap<String, String>> listaMaterias = consultaFaltasService.obterFaltas(anoletivo,semestre);
 			
 			ListAdapter adapter = new SimpleAdapter(this, listaMaterias,
 					R.layout.list_item_faltas,

@@ -2,9 +2,11 @@ package br.com.uniararas.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import br.com.uniararas.beans.Materias;
 import br.com.uniararas.resources.WebServiceCall;
@@ -16,7 +18,7 @@ import com.google.gson.reflect.TypeToken;
 public class ConsultaFaltasService {
 	
 	public ArrayList<HashMap<String,String>> obterFaltas(String ano ,String semestre) throws Exception {
-		ArrayList<HashMap<String,String>> listaMaterias = null;
+		ArrayList<HashMap<String,String>> listaMaterias = new ArrayList<HashMap<String,String>>();
 		try {
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
 			String[] resposta = webServiceCall.get(ano,semestre, Constantes.URL_OBTER_FALTAS);
@@ -24,19 +26,32 @@ public class ConsultaFaltasService {
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao obter faltas.");
 			
-			java.lang.reflect.Type listType = new TypeToken<List<Materias>>() {}.getType();
-			List<Materias> materias = new Gson().fromJson( resposta[1].trim() , listType);
+//			java.lang.reflect.Type listType = new TypeToken<List<Materias>>() {}.getType();
+//			List<Materias> materias = new Gson().fromJson( resposta[1].trim() , listType);
+//			
+//			listaMaterias = new ArrayList<HashMap<String,String>>();
+//			
+//			for (Materias materia : materias){
+//				
+//				HashMap<String, String> map = new HashMap<String, String>();
+//				
+//				map.put(Constantes.TAG_NOME_MATERIA, materia.nomemateria);
+//				map.put(Constantes.TAG_NUMERO_FALTAS, materia.numerofaltas);
+//				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, materia.numerofaltaslimite);
+//
+//				listaMaterias.add(map);
+//			}
 			
-			listaMaterias = new ArrayList<HashMap<String,String>>();
+			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			
-			for (Materias materia : materias){
-				
+			Iterator<String> keys = mainObject.keys();
+			while(keys.hasNext()){
+				String key = keys.next();
+				JSONObject value = mainObject.getJSONObject(key);
 				HashMap<String, String> map = new HashMap<String, String>();
-				
-				map.put(Constantes.TAG_NOME_MATERIA, materia.nomemateria);
-				map.put(Constantes.TAG_NUMERO_FALTAS, materia.numerofaltas);
-				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, materia.numerofaltaslimite);
-
+				map.put(Constantes.TAG_NOME_MATERIA, value.getString(Constantes.TAG_NOME_MATERIA));
+				map.put(Constantes.TAG_NUMERO_FALTAS, value.getString(Constantes.TAG_NUMERO_FALTAS));
+				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, value.getString(Constantes.TAG_NUMERO_FALTAS_LIMITE));
 				listaMaterias.add(map);
 			}
 			

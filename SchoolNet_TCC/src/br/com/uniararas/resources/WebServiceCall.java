@@ -130,7 +130,7 @@ public class WebServiceCall {
 		try {
 			String url = Constantes.URL_PADRAO + urlLocal;
 
-			HttpGet httpGet = new HttpGet(new URI(url+"?" + Constantes.URL_ANO_LETIVO + ano + "&" + Constantes.URL_SEMESTRE));
+			HttpGet httpGet = new HttpGet(new URI(url+"?" + Constantes.URL_ANO_LETIVO +"="+ ano + "&" + Constantes.URL_SEMESTRE+"="+ semestre));
 			httpGet.setHeader("Content-type", "application/json");
 			httpGet.setHeader("Content-type", "application/x-www-form-urlencoded");
 			

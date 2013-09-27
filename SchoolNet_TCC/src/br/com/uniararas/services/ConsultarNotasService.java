@@ -2,9 +2,11 @@ package br.com.uniararas.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import br.com.uniararas.beans.Materias;
 import br.com.uniararas.resources.WebServiceCall;
@@ -16,7 +18,7 @@ import com.google.gson.reflect.TypeToken;
 public class ConsultarNotasService {
 
 	public ArrayList<HashMap<String,String>> obterNotas(String ano , String semestre) throws Exception {
-		ArrayList<HashMap<String,String>> listaMaterias = null;
+		ArrayList<HashMap<String,String>> listaMaterias = new ArrayList<HashMap<String,String>>();
 		try {
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
 			String[] resposta = webServiceCall.get(ano,semestre, Constantes.URL_OBTER_NOTAS);
@@ -24,21 +26,36 @@ public class ConsultarNotasService {
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao obter notas.");
 			
-			java.lang.reflect.Type listType = new TypeToken<List<Materias>>() {}.getType();
-			List<Materias> materias = new Gson().fromJson( resposta[1].trim() , listType);
-			
-			listaMaterias = new ArrayList<HashMap<String,String>>();
-			
-			for (Materias materia : materias){
-				
-				HashMap<String, String> map = new HashMap<String, String>();
-				
-				map.put(Constantes.TAG_NOME_MATERIA, materia.nomemateria);
-				map.put(Constantes.TAG_PRIMEIRA_NOTA, materia.primeiranota);
-				map.put(Constantes.TAG_NOTA_SPA, materia.notaspa);
-				map.put(Constantes.TAG_SEGUNDA_NOTA,materia.segundanota);
+//			java.lang.reflect.Type listType = new TypeToken<List<Materias>>() {}.getType();
+//			List<Materias> materias = new Gson().fromJson( resposta[1].trim() , listType);
+//			
+//			listaMaterias = new ArrayList<HashMap<String,String>>();
+//			
+//			for (Materias materia : materias){
+//				
+//				HashMap<String, String> map = new HashMap<String, String>();
+//				
+//				map.put(Constantes.TAG_NOME_MATERIA, materia.nomemateria);
+//				map.put(Constantes.TAG_PRIMEIRA_NOTA, materia.primeiranota);
+//				map.put(Constantes.TAG_NOTA_SPA, materia.notaspa);
+//				map.put(Constantes.TAG_SEGUNDA_NOTA,materia.segundanota);
 //				map.put(Constantes.TAG_MEDIA_FINAL, materia.getMediafinal());
-
+//
+//				listaMaterias.add(map);
+//			}
+			
+			JSONObject mainObject = new JSONObject(resposta[1].trim());
+			
+			Iterator<String> keys = mainObject.keys();
+			while(keys.hasNext()){
+				String key = keys.next();
+				JSONObject value = mainObject.getJSONObject(key);
+				HashMap<String, String> map = new HashMap<String, String>();
+				map.put(Constantes.TAG_NOME_MATERIA, value.getString(Constantes.TAG_NOME_MATERIA));
+				map.put(Constantes.TAG_PRIMEIRA_NOTA, value.getString(Constantes.TAG_PRIMEIRA_NOTA));
+				map.put(Constantes.TAG_NOTA_SPA, value.getString(Constantes.TAG_NOTA_SPA));
+				map.put(Constantes.TAG_SEGUNDA_NOTA, value.getString(Constantes.TAG_SEGUNDA_NOTA));
+				map.put(Constantes.TAG_MEDIA_FINAL, "-");
 				listaMaterias.add(map);
 			}
 
