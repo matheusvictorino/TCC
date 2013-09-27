@@ -22,6 +22,8 @@ public interface Constantes {
     
     String TAG_SEMESTRE = "semestre";
     
+    String TAG_ANO = "anolevito";
+    
 	String TAG_NUMERO_FALTAS = "numerofaltas";
 	
 	String TAG_NUMERO_FALTAS_LIMITE = "numerofaltaslimite";

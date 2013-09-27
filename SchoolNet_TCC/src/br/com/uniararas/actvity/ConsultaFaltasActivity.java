@@ -30,7 +30,7 @@ public class ConsultaFaltasActivity extends ListActivity {
 			
 		textNome.setText(MenuActivity.aluno.nomealuno);
 		textRa.setText(MenuActivity.aluno.ra);
-		textCurso.setText("Sistemas de Informação");
+		textCurso.setText(MenuActivity.aluno.email);
 
 		try{
 			ArrayList<HashMap<String, String>> listaMaterias = consultaFaltasService.obterFaltas("","");

@@ -33,11 +33,11 @@ public class ConsultarNotasService {
 				
 				HashMap<String, String> map = new HashMap<String, String>();
 				
-				map.put(Constantes.TAG_NOME_MATERIA, materia.getNomemateria());
-				map.put(Constantes.TAG_PRIMEIRA_NOTA, materia.getPrimeiranota());
-				map.put(Constantes.TAG_NOTA_SPA, materia.getNotaspa());
-				map.put(Constantes.TAG_SEGUNDA_NOTA,materia.getSegundanota());
-				map.put(Constantes.TAG_MEDIA_FINAL, materia.getMediafinal());
+				map.put(Constantes.TAG_NOME_MATERIA, materia.nomemateria);
+				map.put(Constantes.TAG_PRIMEIRA_NOTA, materia.primeiranota);
+				map.put(Constantes.TAG_NOTA_SPA, materia.notaspa);
+				map.put(Constantes.TAG_SEGUNDA_NOTA,materia.segundanota);
+//				map.put(Constantes.TAG_MEDIA_FINAL, materia.getMediafinal());
 
 				listaMaterias.add(map);
 			}

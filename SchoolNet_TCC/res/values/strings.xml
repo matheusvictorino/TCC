@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_lista">Consulta Lista</string>
+    <string name="title_activity_consulta_ano_semestre">ConsultaAnoSemestreActivity</string>
 
 </resources>

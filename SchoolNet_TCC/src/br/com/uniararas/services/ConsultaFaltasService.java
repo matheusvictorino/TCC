@@ -33,9 +33,9 @@ public class ConsultaFaltasService {
 				
 				HashMap<String, String> map = new HashMap<String, String>();
 				
-				map.put(Constantes.TAG_NOME_MATERIA, materia.getNomemateria());
-				map.put(Constantes.TAG_NUMERO_FALTAS, materia.getNumerofaltas());
-				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, materia.getNumerofaltaslimite());
+				map.put(Constantes.TAG_NOME_MATERIA, materia.nomemateria);
+				map.put(Constantes.TAG_NUMERO_FALTAS, materia.numerofaltas);
+				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, materia.numerofaltaslimite);
 
 				listaMaterias.add(map);
 			}

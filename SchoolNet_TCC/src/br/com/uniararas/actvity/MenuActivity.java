@@ -1,8 +1,5 @@
 package br.com.uniararas.actvity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +9,6 @@ import android.widget.TextView;
 import br.com.uniararas.beans.Aluno;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 public class MenuActivity extends Activity {
 	
@@ -46,14 +42,14 @@ public class MenuActivity extends Activity {
 	}
 	
 	public void onClickConsultarNotas(View view) {
-		Intent in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
+		Intent in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
 		in.putExtra("aluno", new Gson().toJson(aluno));
 		startActivity(in);
 
 	}
 	
 	public void onClickConsultarFaltas(View view) {
-		Intent in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
+		Intent in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
 		in.putExtra("aluno", new Gson().toJson(aluno));
 		startActivity(in);
 

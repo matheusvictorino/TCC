@@ -60,6 +60,10 @@ public class WebServiceCall {
 		return instance;
 	}
 	
+	public static void destroyInstance(){
+		instance = null;
+	}
+	
 	private void setTimeOut(HttpParams params) {
 		HttpConnectionParams.setConnectionTimeout(params,
 				JSON_CONNECTION_TIMEOUT);
