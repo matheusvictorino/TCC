@@ -1,6 +1,6 @@
 package br.com.uniararas.beans;
 
-public class AnoSemestre implements Comparable<AnoSemestre> {
+public class AnoSemestre implements Comparable<AnoSemestre>  {
 
 	public String anolevito;
 

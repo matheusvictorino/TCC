@@ -27,6 +27,7 @@ public class ConsultaAnoSemestreService {
 			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			
 			Iterator<String> keys = mainObject.keys();
+			
 			while(keys.hasNext()){
 				String key = keys.next();
 				JSONObject value = mainObject.getJSONObject(key);
@@ -38,6 +39,7 @@ public class ConsultaAnoSemestreService {
 			
 			
 			Collections.sort(anosSemestres);
+			Collections.reverse(anosSemestres);
 			for(AnoSemestre anosS : anosSemestres){
 				HashMap<String, String> map = new HashMap<String, String>();
 				map.put(Constantes.TAG_ANO, anosS.anolevito);
