@@ -42,7 +42,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight=".50"
                 android:gravity="left"
-                android:text="Numero de Faltas"
+                android:text="@string/numeroFaltas"
                 android:textColor="#acacac"
                 android:textStyle="bold" />
 
@@ -53,7 +53,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:gravity="left"
-                android:text="Limite de Faltas"
+                android:text="@string/limiteFaltas"
                 android:textColor="#acacac"
                 android:textStyle="bold" />
 
@@ -65,24 +65,22 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/limitefaltas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 android:layout_weight=".50"
-                android:layout_gravity="center"
-                android:gravity="left"
-                android:text="10"
-                android:textColor="#5d5d5d"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/numerofaltas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                  android:layout_weight=".50"
                 android:layout_gravity="center"
                 android:gravity="left"
-                android:text="10"
+                android:textColor="#5d5d5d"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/limitefaltas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:layout_weight=".50"
+                android:layout_gravity="center"
+                android:gravity="left"
                 android:textColor="#5d5d5d"
                 android:textStyle="bold" />
 

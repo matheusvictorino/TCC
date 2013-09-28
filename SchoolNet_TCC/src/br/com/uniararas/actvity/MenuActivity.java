@@ -50,7 +50,8 @@ public class MenuActivity extends Activity {
 	}
 	
 	public void onClickConsultarFaltas(View view) {
-		Intent in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
+		//Intent in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
+		Intent in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
 		in.putExtra("aluno", new Gson().toJson(aluno));
 		in.putExtra("consulta", "faltas");
 		startActivity(in);
