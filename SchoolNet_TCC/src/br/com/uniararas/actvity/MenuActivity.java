@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import br.com.uniararas.beans.Aluno;
+import br.com.uniararas.resources.WebServiceCall;
 
 import com.google.gson.Gson;
 
@@ -50,11 +51,19 @@ public class MenuActivity extends Activity {
 	}
 	
 	public void onClickConsultarFaltas(View view) {
-		Intent in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
+		Intent in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
 		in.putExtra("aluno", new Gson().toJson(aluno));
-		in.putExtra("consulta", "faltas");
+		in.putExtra("anoletivo", "");
+		in.putExtra("semestre", "");
 		startActivity(in);
 
 	}
 
+    public boolean onClickLogout(View view) {
+    	WebServiceCall webServiceCall = WebServiceCall.getInstance();
+    	webServiceCall.destroyInstance();
+    	Intent in = new Intent(getApplicationContext(), LoginActivity.class);
+		startActivity(in);
+		return true;
+    }
 }
