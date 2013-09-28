@@ -1,12 +1,14 @@
 package br.com.uniararas.services;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.com.uniararas.beans.AnoSemestre;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.util.Constantes;
 
@@ -23,13 +25,25 @@ public class ConsultaAnoSemestreService {
 			
 			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			
+			ArrayList<AnoSemestre> anosSemestres = new ArrayList<AnoSemestre>();
+			
 			Iterator<String> keys = mainObject.keys();
+			
 			while(keys.hasNext()){
 				String key = keys.next();
 				JSONObject value = mainObject.getJSONObject(key);
+				AnoSemestre a = new AnoSemestre();
+				a.anolevito = value.getString("anolevito");
+				a.semestre = value.getString("semestre");
+				anosSemestres.add(a);
+			}
+			
+			Collections.sort(anosSemestres);
+			
+			for(AnoSemestre anosS : anosSemestres){
 				HashMap<String, String> map = new HashMap<String, String>();
-				map.put(Constantes.TAG_ANO, value.getString("anolevito"));
-				map.put(Constantes.TAG_SEMESTRE, value.getString("semestre"));
+				map.put(Constantes.TAG_ANO, anosS.anolevito);
+				map.put(Constantes.TAG_SEMESTRE, anosS.semestre);
 				listaAnoSemestre.add(map);
 			}
 			
