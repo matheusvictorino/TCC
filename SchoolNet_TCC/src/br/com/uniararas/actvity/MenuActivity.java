@@ -63,7 +63,10 @@ public class MenuActivity extends Activity {
     	WebServiceCall webServiceCall = WebServiceCall.getInstance();
     	webServiceCall.destroyInstance();
     	Intent in = new Intent(getApplicationContext(), LoginActivity.class);
+    	in.putExtra("finish", true);
+		in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(in);
+        finish();
 		return true;
     }
 }

@@ -2,8 +2,6 @@ package br.com.uniararas.services;
 
 import org.json.JSONObject;
 
-import com.google.gson.JsonObject;
-
 import br.com.uniararas.beans.Aluno;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.util.Constantes;

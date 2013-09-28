@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import br.com.uniararas.beans.Aluno;
-import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.services.LoginService;
 
 public class LoginActivity extends Activity {

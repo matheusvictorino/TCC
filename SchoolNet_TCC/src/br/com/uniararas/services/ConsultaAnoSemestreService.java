@@ -26,6 +26,7 @@ public class ConsultaAnoSemestreService {
 			
 			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			
+			@SuppressWarnings("unchecked")
 			Iterator<String> keys = mainObject.keys();
 			
 			while(keys.hasNext()){
