@@ -50,8 +50,8 @@ public class ConsultaFaltasService {
 				JSONObject value = mainObject.getJSONObject(key);
 				HashMap<String, String> map = new HashMap<String, String>();
 				map.put(Constantes.TAG_NOME_MATERIA, value.getString(Constantes.TAG_NOME_MATERIA));
-				map.put(Constantes.TAG_NUMERO_FALTAS, value.getString(Constantes.TAG_NUMERO_FALTAS_LIMITE));
-				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, value.getString(Constantes.TAG_NUMERO_FALTAS));
+				map.put(Constantes.TAG_NUMERO_FALTAS, value.getString(Constantes.TAG_NUMERO_FALTAS));
+				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, value.getString(Constantes.TAG_NUMERO_FALTAS_LIMITE));
 				listaMaterias.add(map);
 			}
 			
