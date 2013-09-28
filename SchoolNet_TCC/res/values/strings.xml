@@ -7,5 +7,6 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_lista">Consulta Lista</string>
     <string name="title_activity_consulta_ano_semestre">ConsultaAnoSemestreActivity</string>
-
+	<string name="Ano">Ano</string>
+	<string name="numeroSemestre">º - Semestre</string>
 </resources>
