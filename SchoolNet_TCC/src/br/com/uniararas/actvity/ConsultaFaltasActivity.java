@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.services.ConsultaFaltasService;
 import br.com.uniararas.util.Constantes;
@@ -24,8 +22,6 @@ public class ConsultaFaltasActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lista);
-		Context context = getApplicationContext();
-		int duration = Toast.LENGTH_SHORT;
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
@@ -49,8 +45,10 @@ public class ConsultaFaltasActivity extends ListActivity {
 	
 			setListAdapter(adapter);
 		}catch(Exception e){
-			Toast toast = Toast.makeText(context, e.getMessage(), duration);
-			toast.show();getApplicationContext();
+			Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
+			intentErro.putExtra("msgErro",  e.getMessage());
+			startActivity(intentErro);
+			finish();
 		}
 	}
 	
