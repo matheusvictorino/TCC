@@ -47,7 +47,7 @@
 			    android:onClick="onClickConsultarFaltas"
 			    android:layout_gravity="center_horizontal"
 			    android:background="@drawable/botao_faltas_background"/>
+		
 		</LinearLayout>
 	</LinearLayout>
-	
 </LinearLayout>

@@ -60,7 +60,7 @@ public class WebServiceCall {
 		return instance;
 	}
 	
-	public static void destroyInstance(){
+	public void destroyInstance(){
 		instance = null;
 	}
 	

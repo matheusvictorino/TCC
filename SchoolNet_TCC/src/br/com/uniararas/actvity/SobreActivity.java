@@ -1,0 +1,15 @@
+package br.com.uniararas.actvity;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.os.Bundle;
+
+public class SobreActivity extends Fragment {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_sobre);		
+	}
+
+}

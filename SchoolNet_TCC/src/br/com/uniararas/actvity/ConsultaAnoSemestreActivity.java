@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.services.ConsultaAnoSemestreService;
 import br.com.uniararas.util.Constantes;
 
@@ -78,4 +79,15 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 			toast.show();getApplicationContext();
 		}
 	}
+	
+    public boolean onClickLogout(View view) {
+    	WebServiceCall webServiceCall = WebServiceCall.getInstance();
+    	webServiceCall.destroyInstance();
+    	Intent in = new Intent(getApplicationContext(), LoginActivity.class);
+    	in.putExtra("finish", true);
+		in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(in);
+        finish();
+		return true;
+    }
 }

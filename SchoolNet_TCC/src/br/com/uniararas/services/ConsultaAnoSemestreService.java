@@ -16,6 +16,7 @@ public class ConsultaAnoSemestreService {
 	
 	public ArrayList<HashMap<String,String>> obterAnoSemestre() throws Exception {
 		ArrayList<HashMap<String,String>> listaAnoSemestre = new ArrayList<HashMap<String,String>>();
+		ArrayList<AnoSemestre> anosSemestres = new ArrayList<AnoSemestre>();
 		try {
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
 			String[] resposta = webServiceCall.get("","", Constantes.URL_OBTER_ANO_SEMESTRE);
@@ -25,8 +26,7 @@ public class ConsultaAnoSemestreService {
 			
 			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			
-			ArrayList<AnoSemestre> anosSemestres = new ArrayList<AnoSemestre>();
-			
+			@SuppressWarnings("unchecked")
 			Iterator<String> keys = mainObject.keys();
 			
 			while(keys.hasNext()){
@@ -38,8 +38,9 @@ public class ConsultaAnoSemestreService {
 				anosSemestres.add(a);
 			}
 			
-			Collections.sort(anosSemestres);
 			
+			Collections.sort(anosSemestres);
+			Collections.reverse(anosSemestres);
 			for(AnoSemestre anosS : anosSemestres){
 				HashMap<String, String> map = new HashMap<String, String>();
 				map.put(Constantes.TAG_ANO, anosS.anolevito);

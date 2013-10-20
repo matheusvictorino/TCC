@@ -3,17 +3,12 @@ package br.com.uniararas.services;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.com.uniararas.beans.Materias;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.util.Constantes;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 public class ConsultarNotasService {
 
@@ -46,6 +41,7 @@ public class ConsultarNotasService {
 			
 			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			
+			@SuppressWarnings("unchecked")
 			Iterator<String> keys = mainObject.keys();
 			while(keys.hasNext()){
 				String key = keys.next();
