@@ -6,15 +6,32 @@
     
     
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:paddingTop="50dp"
         android:text="Uniararas para Android"/>
     
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="12sp"
+        android:gravity="center_horizontal"
+        android:text="Versão 1.0"/>
+    
+    <ImageView
+        android:id="@id/imagemLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ic_launcher"/>        
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:gravity="center_horizontal"
         android:text="Leandro Motta M. Oliveira, Gerson Donscoi Junior"/>
 
 </LinearLayout>

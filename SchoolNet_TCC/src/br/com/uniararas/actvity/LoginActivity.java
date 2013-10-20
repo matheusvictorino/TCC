@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import br.com.uniararas.beans.Aluno;
 import br.com.uniararas.services.LoginService;
@@ -18,6 +22,7 @@ public class LoginActivity extends Activity {
 	EditText ra;
 	EditText senha;
 	String result[];
+	private TextView textCarregando;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,64 +31,80 @@ public class LoginActivity extends Activity {
         
         ra = (EditText)findViewById(R.id.editText1);
         senha = (EditText)findViewById(R.id.editText2);
+        
+        textCarregando = (TextView)findViewById(R.id.textView1);
     }
 
+    public class ChamadaWebService extends AsyncTask<Integer, String, String> {
+ 
+        @Override
+        protected void onPreExecute() {
+        	textCarregando.setVisibility(TextView.VISIBLE);
+        	ra.setEnabled(false);
+        	senha.setEnabled(false);
+        }
+ 
+        @Override
+        protected String doInBackground(Integer... paramss) {
+        	
+        	Aluno aluno = new Aluno();
+    		aluno.ra = ra.getText().toString(); 
+    		
+    		try{
+    			aluno.setSenha(senha.getText().toString());
+    			LoginService loginService = new LoginService();
+    			result = loginService.autenticarUsuario(aluno);
+    			if(result != null){
+    				Intent in = new Intent(getApplicationContext(), MenuActivity.class);
+    				in.putExtra("aluno", result[1]);
+    				startActivity(in);
+    				return "SUCESSO";
+    			}else {
+    				return "Ocorreu um erro.";	
+    			}
+    		}catch(Exception e){
+    			return e.getMessage();
+    		}
+        }
+ 
+        @Override
+        protected void onPostExecute(String result) {
+        	if (!result.equals("SUCESSO"))
+        		toast(result);
+        	textCarregando.setVisibility(TextView.INVISIBLE);
+        	ra.setEnabled(true);
+        	senha.setEnabled(true);
+    		
+        }
+ 
+    }
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.login, menu);
         return true;
-    }
+    }*/
     
 	public boolean onClickLogin(View view) {
-		Context context = getApplicationContext();
-		int duration = Toast.LENGTH_SHORT;
-		
 		if(!testConnection()){
 			toast("Você Precisa estar conectado a internet antes de continuar");
 			return false;
 		}
 		
 		if(ra.getText().toString().isEmpty()){
-			ra.setError("Por Favor digite seu RA");
+			ra.setError(Html.fromHtml("<font color='red'>Por Favor digite seu RA</font>"));
 			return false;
 		}
 		
 		if(senha.getText().toString().isEmpty()){
-			senha.setError("Por Favor digite sua SENHA");
+			senha.setError(Html.fromHtml("<font color='red'>Por Favor digite sua SENHA</font>"));
 			return false;
 		}
 		
-		Aluno aluno = new Aluno();
-		aluno.ra = ra.getText().toString(); 
+		ChamadaWebService chamadaWebService = new ChamadaWebService();
+		chamadaWebService.execute(0,0,0);
 		
-		try {
-			aluno.setSenha(senha.getText().toString());
-		} catch (Exception e) {
-			Toast toast = Toast.makeText(context, e.getMessage(), duration);
-			toast.show();getApplicationContext();
-			return false;	
-		}
-		
-		try{
-			LoginService loginService = new LoginService();
-			result = loginService.autenticarUsuario(aluno);
-			if(result != null){
-				Intent in = new Intent(getApplicationContext(), MenuActivity.class);
-				in.putExtra("aluno", result[1]);
-				startActivity(in);
-				return true;
-			}else {
-				Toast toast = Toast.makeText(context, "Ocorreu um erro.", duration);
-				toast.show();getApplicationContext();
-				return false;	
-			}
-		}catch(Exception e){
-			Toast toast = Toast.makeText(context, e.getMessage(), duration);
-			toast.show();getApplicationContext();
-			return false;		
-		}
-		
+		return true;
 	}
 	
 	private boolean testConnection() { 
@@ -109,5 +130,22 @@ public class LoginActivity extends Activity {
         Log.d ("teste", msg);
         toast (msg);
     } 
+    
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.menu, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	Intent in = new Intent(getApplicationContext(), SobreActivity.class);
+	        	startActivity(in);
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
     
 }

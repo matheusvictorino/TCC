@@ -3,12 +3,11 @@ package br.com.uniararas.actvity;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.google.gson.Gson;
-
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -16,10 +15,11 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.services.ConsultaAnoSemestreService;
 import br.com.uniararas.util.Constantes;
+
+import com.google.gson.Gson;
 
 public class ConsultaAnoSemestreActivity extends ListActivity {
 
@@ -29,8 +29,6 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lista);
-		Context context = getApplicationContext();
-		int duration = Toast.LENGTH_SHORT;
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
@@ -75,8 +73,10 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 	            }
 	        });
 		}catch(Exception e){
-			Toast toast = Toast.makeText(context, e.getMessage(), duration);
-			toast.show();getApplicationContext();
+			Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
+			intentErro.putExtra("msgErro",  e.getMessage());
+			startActivity(intentErro);
+			finish();
 		}
 	}
 	
@@ -90,4 +90,21 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
         finish();
 		return true;
     }
+    
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.menu, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	Intent in = new Intent(getApplicationContext(), SobreActivity.class);
+	        	startActivity(in);
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 }
