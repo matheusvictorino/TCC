@@ -21,11 +21,12 @@ public class ConsultaNotasActivity extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_lista);
+		setContentView(R.layout.activity_lista_notas);
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
 		TextView textCurso = (TextView) findViewById(R.id.textView1);
+		TextView textAnoSemestre = (TextView) findViewById(R.id.ano_semestre);
 			
 		textNome.setText(MenuActivity.aluno.nomealuno);
 		textRa.setText(MenuActivity.aluno.ra);
@@ -34,6 +35,7 @@ public class ConsultaNotasActivity extends ListActivity {
 		Intent intent = getIntent();
 		String anoletivo = intent.getStringExtra("anoletivo");
 		String semestre = intent.getStringExtra("semestre");
+		textAnoSemestre.setText(semestre + "º Semestre do ano de " + anoletivo);
 		
 		try {
 			ArrayList<HashMap<String, String>> listaMaterias = consultarNotasService.obterNotas(anoletivo,semestre);
