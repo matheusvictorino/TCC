@@ -43,13 +43,18 @@ public class ConsultarNotasService {
 			
 			@SuppressWarnings("unchecked")
 			Iterator<String> keys = mainObject.keys();
+			String spa = "";
 			while(keys.hasNext()){
 				String key = keys.next();
 				JSONObject value = mainObject.getJSONObject(key);
 				HashMap<String, String> map = new HashMap<String, String>();
 				map.put(Constantes.TAG_NOME_MATERIA, value.getString(Constantes.TAG_NOME_MATERIA));
 				map.put(Constantes.TAG_PRIMEIRA_NOTA, value.getString(Constantes.TAG_PRIMEIRA_NOTA));
-				map.put(Constantes.TAG_NOTA_SPA, value.getString(Constantes.TAG_NOTA_SPA));
+				if(value.getString(Constantes.TAG_NOTA_SPA).equals("null") || value.getString(Constantes.TAG_NOTA_SPA).equals(""))
+					spa = "-";
+				else
+					spa = value.getString(Constantes.TAG_NOTA_SPA);
+				map.put(Constantes.TAG_NOTA_SPA,spa );
 				map.put(Constantes.TAG_SEGUNDA_NOTA, value.getString(Constantes.TAG_SEGUNDA_NOTA));
 				map.put(Constantes.TAG_MEDIA_FINAL, "-");
 				listaMaterias.add(map);

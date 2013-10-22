@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.ListActivity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +27,6 @@ import com.google.gson.Gson;
 public class ConsultaAnoSemestreActivity extends ListActivity {
 
 	private ConsultaAnoSemestreService consultaAnoSemestreService = new ConsultaAnoSemestreService();
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,40 +40,9 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 		textRa.setText(MenuActivity.aluno.ra);
 		textCurso.setText(MenuActivity.aluno.email);
 		
-		Intent intent = getIntent();
-		final String tipoConsulta = intent.getStringExtra("consulta");
-		
 		try{
-			ArrayList<HashMap<String, String>> listaAnoLetivo = consultaAnoSemestreService.obterAnoSemestre();
-			
-			ListAdapter adapter = new SimpleAdapter(this, listaAnoLetivo,
-					R.layout.list_item_semestre,
-					new String[] { Constantes.TAG_ANO, Constantes.TAG_SEMESTRE }, new int[] {
-							R.id.anoletivo, R.id.semestre});
-	
-			setListAdapter(adapter);
-			
-			ListView lv = getListView();
-			 
-	        lv.setOnItemClickListener(new OnItemClickListener() {
-	 
-	            @Override
-	            public void onItemClick(AdapterView<?> parent, View view,
-	                    int position, long id) {
-	                String anoletivo = ((TextView) view.findViewById(R.id.anoletivo)).getText().toString();
-	                String semestre = ((TextView) view.findViewById(R.id.semestre)).getText().toString();
-	                Intent in = null;
-	                if(tipoConsulta.equals("notas")){
-	                	in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
-	                }else{
-	                	in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
-	                }
-	        		in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
-	        		in.putExtra("anoletivo", anoletivo);
-	        		in.putExtra("semestre", semestre);
-	        		startActivity(in);
-	            }
-	        });
+			ChamadaWebService chamadaWebService = new ChamadaWebService(this);
+			chamadaWebService.execute(0,0,0);
 		}catch(Exception e){
 			Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
 			intentErro.putExtra("msgErro",  e.getMessage());
@@ -107,4 +78,70 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
+	
+
+    public class ChamadaWebService extends AsyncTask<Integer, String, String> {
+ 
+    	 private ProgressDialog progress;
+         private Context context;
+         ArrayList<HashMap<String, String>> listaAnoLetivo ;
+         public ChamadaWebService(Context context) {
+             this.context = context;
+         }
+         
+        @Override
+        protected void onPreExecute() {
+        	progress = new ProgressDialog(context);
+            progress.setMessage("Aguarde...");
+            progress.show();
+        }
+ 
+        @Override
+        protected String doInBackground(Integer... paramss) {
+    		try{
+				listaAnoLetivo = new ArrayList<HashMap<String,String>>();
+	    		listaAnoLetivo = consultaAnoSemestreService.obterAnoSemestre();
+	    		return "SUCESSO";
+    		}catch(Exception e){
+    			return e.getMessage();
+    		}
+        }
+ 
+        @Override
+        protected void onPostExecute(String result) {
+        	if (!result.equals("SUCESSO")){
+        		Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
+    			intentErro.putExtra("msgErro",  result);
+    			startActivity(intentErro);
+    			finish();
+        	}
+        	progress.dismiss();
+        	ListAdapter adapter = new SimpleAdapter(context, listaAnoLetivo,
+					R.layout.list_item_semestre,
+					new String[] { Constantes.TAG_ANO, Constantes.TAG_SEMESTRE }, new int[] {
+							R.id.anoletivo, R.id.semestre});
+	
+			setListAdapter(adapter);
+			
+			ListView lv = getListView();
+			 
+	        lv.setOnItemClickListener(new OnItemClickListener() {
+	 
+	            @Override
+	            public void onItemClick(AdapterView<?> parent, View view,
+	                    int position, long id) {
+	                String anoletivo = ((TextView) view.findViewById(R.id.anoletivo)).getText().toString();
+	                String semestre = ((TextView) view.findViewById(R.id.semestre)).getText().toString();
+	                Intent in = null;
+                	in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
+	        		in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
+	        		in.putExtra("anoletivo", anoletivo);
+	        		in.putExtra("semestre", semestre);
+	        		startActivity(in);
+	            }
+	        });
+    		
+        }
+ 
+    }
 }

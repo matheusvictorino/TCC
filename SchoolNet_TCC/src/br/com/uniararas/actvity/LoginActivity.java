@@ -1,6 +1,7 @@
 package br.com.uniararas.actvity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -12,17 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import br.com.uniararas.beans.Aluno;
 import br.com.uniararas.services.LoginService;
 
 public class LoginActivity extends Activity {
 
-	EditText ra;
-	EditText senha;
-	String result[];
-	private TextView textCarregando;
+	private EditText ra;
+	private EditText senha;
+	private String result[];
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,60 +30,8 @@ public class LoginActivity extends Activity {
         
         ra = (EditText)findViewById(R.id.editText1);
         senha = (EditText)findViewById(R.id.editText2);
-        
-        textCarregando = (TextView)findViewById(R.id.textView1);
     }
 
-    public class ChamadaWebService extends AsyncTask<Integer, String, String> {
- 
-        @Override
-        protected void onPreExecute() {
-        	textCarregando.setVisibility(TextView.VISIBLE);
-        	ra.setEnabled(false);
-        	senha.setEnabled(false);
-        }
- 
-        @Override
-        protected String doInBackground(Integer... paramss) {
-        	
-        	Aluno aluno = new Aluno();
-    		aluno.ra = ra.getText().toString(); 
-    		
-    		try{
-    			aluno.setSenha(senha.getText().toString());
-    			LoginService loginService = new LoginService();
-    			result = loginService.autenticarUsuario(aluno);
-    			if(result != null){
-    				Intent in = new Intent(getApplicationContext(), MenuActivity.class);
-    				in.putExtra("aluno", result[1]);
-    				startActivity(in);
-    				return "SUCESSO";
-    			}else {
-    				return "Ocorreu um erro.";	
-    			}
-    		}catch(Exception e){
-    			return e.getMessage();
-    		}
-        }
- 
-        @Override
-        protected void onPostExecute(String result) {
-        	if (!result.equals("SUCESSO"))
-        		toast(result);
-        	textCarregando.setVisibility(TextView.INVISIBLE);
-        	ra.setEnabled(true);
-        	senha.setEnabled(true);
-    		
-        }
- 
-    }
-
-/*    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.login, menu);
-        return true;
-    }*/
-    
 	public boolean onClickLogin(View view) {
 		if(!testConnection()){
 			toast("Você Precisa estar conectado a internet antes de continuar");
@@ -101,7 +48,7 @@ public class LoginActivity extends Activity {
 			return false;
 		}
 		
-		ChamadaWebService chamadaWebService = new ChamadaWebService();
+		ChamadaWebService chamadaWebService = new ChamadaWebService(this);
 		chamadaWebService.execute(0,0,0);
 		
 		return true;
@@ -148,4 +95,56 @@ public class LoginActivity extends Activity {
 	    }
 	}
     
+	 public class ChamadaWebService extends AsyncTask<Integer, String, String> {
+		 
+	    	private ProgressDialog progress;
+	        private Context context;
+	        
+	        public ChamadaWebService(Context context) {
+	            this.context = context;
+	        }
+	        
+	        @Override
+	        protected void onPreExecute() {
+	        	progress = new ProgressDialog(context);
+	            progress.setMessage("Aguarde...");
+	            progress.show();
+	        	ra.setEnabled(false);
+	        	senha.setEnabled(false);
+	        }
+	 
+	        @Override
+	        protected String doInBackground(Integer... paramss) {
+	        	
+	        	Aluno aluno = new Aluno();
+	    		aluno.ra = ra.getText().toString(); 
+	    		
+	    		try{
+	    			aluno.setSenha(senha.getText().toString());
+	    			LoginService loginService = new LoginService();
+	    			result = loginService.autenticarUsuario(aluno);
+	    			if(result != null){
+	    				Intent in = new Intent(getApplicationContext(), MenuActivity.class);
+	    				in.putExtra("aluno", result[1]);
+	    				startActivity(in);
+	    				return "SUCESSO";
+	    			}else {
+	    				return "Ocorreu um erro.";	
+	    			}
+	    		}catch(Exception e){
+	    			return e.getMessage();
+	    		}
+	        }
+	 
+	        @Override
+	        protected void onPostExecute(String result) {
+	        	if (!result.equals("SUCESSO"))
+	        		toast(result);
+	        	progress.dismiss();
+	        	ra.setEnabled(true);
+	        	senha.setEnabled(true);
+	    		
+	        }
+	 
+	    }
 }
