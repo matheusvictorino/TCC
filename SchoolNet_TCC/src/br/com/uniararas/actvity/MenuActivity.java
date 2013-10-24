@@ -32,7 +32,7 @@ public class MenuActivity extends Activity {
 		aluno = gson.fromJson( alunoJson , Aluno.class);
 		textNome.setText(aluno.nomealuno);
 		textRa.setText(aluno.ra);
-		textCurso.setText(aluno.email);
+		textCurso.setText(aluno.descricao_curso);
 					
 	}
 

@@ -12,6 +12,8 @@ public class Aluno {
 	public String email;
 	
 	private String senha;
+	
+	public String descricao_curso;
 
 	public String getSenha(){
 		return this.senha;

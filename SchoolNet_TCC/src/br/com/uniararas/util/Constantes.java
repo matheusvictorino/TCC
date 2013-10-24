@@ -18,7 +18,7 @@ public interface Constantes {
     
     String TAG_SEGUNDA_NOTA = "segundanota";
     
-    String TAG_MEDIA_FINAL = "mediafinal";
+    String TAG_MEDIA_FINAL = "media";
     
     String TAG_SEMESTRE = "semestre";
     

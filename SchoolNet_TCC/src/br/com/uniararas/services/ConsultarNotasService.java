@@ -56,7 +56,7 @@ public class ConsultarNotasService {
 					spa = value.getString(Constantes.TAG_NOTA_SPA);
 				map.put(Constantes.TAG_NOTA_SPA,spa );
 				map.put(Constantes.TAG_SEGUNDA_NOTA, value.getString(Constantes.TAG_SEGUNDA_NOTA));
-				map.put(Constantes.TAG_MEDIA_FINAL, "-");
+				map.put(Constantes.TAG_MEDIA_FINAL, value.getString(Constantes.TAG_MEDIA_FINAL));
 				listaMaterias.add(map);
 			}
 

@@ -35,7 +35,7 @@ public class ConsultaNotasActivity extends ListActivity {
 			
 		textNome.setText(MenuActivity.aluno.nomealuno);
 		textRa.setText(MenuActivity.aluno.ra);
-		textCurso.setText(MenuActivity.aluno.email);
+		textCurso.setText(MenuActivity.aluno.descricao_curso);
 		
 		Intent intent = getIntent();
 		String anoletivo = intent.getStringExtra("anoletivo");
