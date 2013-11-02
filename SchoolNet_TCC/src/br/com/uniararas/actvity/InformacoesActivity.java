@@ -1,11 +1,11 @@
 package br.com.uniararas.actvity;
 
+import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
  * 
@@ -38,29 +38,47 @@ import android.widget.TextView;
  *
  *   Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-public class ErroActivity extends Activity {
+public class InformacoesActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_erro);
-		
-		TextView textViewErro =  (TextView) findViewById(R.id.textView2);
-		
-		Intent intent = getIntent();
-		String txtErro = intent.getStringExtra("msgErro");
-		
-		textViewErro.setText(txtErro);
+		setContentView(R.layout.activity_informacoes);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.erro, menu);
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.informacoes, menu);
 		return true;
 	}
-	
-	public void onClickMenu(View view) {
-		finish();
-	}
 
+	 public boolean onClickSobre(View view) {
+		 Intent in = new Intent(getApplicationContext(), SobreActivity.class);
+     	startActivity(in);
+     	return true;
+	 }
+	 
+	 public boolean onClickLocalizacao(View view) {
+		 Intent in = new Intent(getApplicationContext(), LocalizacaoActivity.class);
+     	startActivity(in);
+     	return true;
+	 }
+	 
+	 public boolean onClickHistoria(View view) {
+		 Intent in = new Intent(getApplicationContext(), HistoriaActivity.class);
+     	startActivity(in);
+     	return true;
+	 }
+	 
+		@Override
+		public boolean onOptionsItemSelected(MenuItem item) {
+		    switch (item.getItemId()) {
+		        case R.id.action_settings:
+		        	Intent in = new Intent(getApplicationContext(), SobreActivity.class);
+		        	startActivity(in);
+		        default:
+		            return super.onOptionsItemSelected(item);
+		    }
+		}
 }

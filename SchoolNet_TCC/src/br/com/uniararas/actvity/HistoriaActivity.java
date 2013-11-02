@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 
+package br.com.uniararas.actvity;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuItem;
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
  * 
@@ -32,33 +37,30 @@
  *
  *   Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
- -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginRight="0dp"
-    android:layout_marginTop="0dp"
-    android:animateLayoutChanges="true"
-    android:background="#32849a"
-    android:gravity="right"
-    android:orientation="vertical" >
+public class HistoriaActivity extends Activity {
 
-    <include layout="@layout/barra_superior"/>
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_historia);
+	}
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#ffffff" >
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.historia, menu);
+		return true;
+	}
 
-        <ListView
-            android:id="@android:id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffffff" >
-
-        </ListView>
-
-    </LinearLayout>
-
-</LinearLayout>
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	Intent in = new Intent(getApplicationContext(), SobreActivity.class);
+	        	startActivity(in);
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+}

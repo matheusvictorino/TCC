@@ -7,12 +7,22 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_lista">Consulta Lista</string>
     <string name="title_activity_consulta_ano_semestre">ConsultaAnoSemestreActivity</string>
-
     <string name="Ano">do Ano de</string>
     <string name="numeroSemestre">º - Semestre</string>
     <string name="limiteFaltas">Limite de Faltas</string>
     <string name="numeroFaltas">Número de Faltas</string>
     <string name="title_activity_erro">ErroActivity</string>
-	<string name="title_activity_sobre">Sobre</string>
+    <string name="title_activity_sobre">Sobre</string>
+    <string name="title_activity_informacoes">InformacoesActivity</string>
+    <string name="nossa_missao_fho">\"Promover a aprendizagem, a geração e a difusão do conhecimento, formando o profissional competente e o cidadão compromissado com a construção de uma sociedade justa\"</string>
+    <string name="title_activity_localizacao">LocalizacaoActivity</string>
+    <string name="localizacao_rua">Av. Dr. Maximiliano Baruto, 500</string>
+    <string name="localizacao_bairro">Jd. Universitário</string>
+    <string name="localizacao_cep">CEP: 13607-339</string>
+    <string name="localizacao_tel">Tel: (19) 3543-1400</string>
+    <string name="localizacao_cidade">Araras - SP</string>
+    <string name="title_activity_historia">HistoriaActivity</string>
+    <string name="historia_p1">A história do Centro Universitário Hermínio Ometto (UNIARARAS), instituição de ensino superior privada, pluricurricular, sem fins lucrativos, caminha lado a lado com a história de nossa mantenedora, a Fundação Hermínio Ometto (antes Fundação Regional de Ensino Superior de Araras - Fresa), assim denominada desde 1986, em homenagem a nosso patrono, Dr. Hermínio Ometto.</string>
+    <string name="historia_p2">Da criação da Fresa, em 1973, à aprovação da primeira faculdade por parte do Conselho Estadual de Educação (CEE) transcorreram apenas dez meses. A Faculdade de Ciências Biológicas, a primeira a ser pleiteada, foi instalada a princípio no bairro Belvedere, em Araras. Anos mais tarde, precisamente em 1978, já contávamos com estrutura própria e avançadas instalações, hoje em sua maioria ampliadas.</string>
 
 </resources>
