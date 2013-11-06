@@ -43,11 +43,18 @@ import br.com.uniararas.util.Constantes;
 */
 public class ConsultarNotasService {
 
-	public ArrayList<HashMap<String,String>> obterNotas(String ano , String semestre) throws Exception {
+	public ArrayList<HashMap<String,String>> obterNotas(String cod_fac, String cod_curso, String ano_ingresso,String ano ,String semestre) throws Exception {
 		ArrayList<HashMap<String,String>> listaMaterias = new ArrayList<HashMap<String,String>>();
 		try {
+			String url = Constantes.URL_OBTER_NOTAS +
+					"?cod_fac=" +
+					cod_fac + "&cod_curso=" +
+					cod_curso + "&ano_ingresso=" +
+					ano_ingresso + "&anoletivo=" +
+					ano + "&semestre=" + semestre;
+			
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
-			String[] resposta = webServiceCall.get(ano,semestre, Constantes.URL_OBTER_NOTAS);
+			String[] resposta = webServiceCall.get(url);
 			
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao obter notas.");

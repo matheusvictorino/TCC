@@ -24,5 +24,6 @@
     <string name="title_activity_historia">HistoriaActivity</string>
     <string name="historia_p1">A história do Centro Universitário Hermínio Ometto (UNIARARAS), instituição de ensino superior privada, pluricurricular, sem fins lucrativos, caminha lado a lado com a história de nossa mantenedora, a Fundação Hermínio Ometto (antes Fundação Regional de Ensino Superior de Araras - Fresa), assim denominada desde 1986, em homenagem a nosso patrono, Dr. Hermínio Ometto.</string>
     <string name="historia_p2">Da criação da Fresa, em 1973, à aprovação da primeira faculdade por parte do Conselho Estadual de Educação (CEE) transcorreram apenas dez meses. A Faculdade de Ciências Biológicas, a primeira a ser pleiteada, foi instalada a princípio no bairro Belvedere, em Araras. Anos mais tarde, precisamente em 1978, já contávamos com estrutura própria e avançadas instalações, hoje em sua maioria ampliadas.</string>
+    <string name="title_activity_curso">CursoActivity</string>
 
 </resources>

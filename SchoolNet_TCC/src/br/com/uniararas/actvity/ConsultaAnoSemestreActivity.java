@@ -59,18 +59,31 @@ import com.google.gson.Gson;
 public class ConsultaAnoSemestreActivity extends ListActivity {
 
 	private ConsultaAnoSemestreService consultaAnoSemestreService = new ConsultaAnoSemestreService();
+	private String cod_curso;
+	private String cod_fac;
+	private String ano_ingresso;
+	private String consulta;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_lista);
+		setContentView(R.layout.activity_lista_notas);
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
-		TextView textCurso = (TextView) findViewById(R.id.textView1);
+		TextView textEmai = (TextView) findViewById(R.id.textView1);
+		TextView textCurso = (TextView) findViewById(R.id.ano_semestre);
 			
 		textNome.setText(MenuActivity.aluno.nomealuno);
 		textRa.setText(MenuActivity.aluno.ra);
-		textCurso.setText(MenuActivity.aluno.descricao_curso);
+		textEmai.setText(MenuActivity.aluno.email);
+		textCurso.setText(Constantes.SELECIONE_ANO_SEMESTRE);
+		
+		Intent intent = getIntent();
+		cod_curso = intent.getStringExtra("cod_curso");
+		cod_fac = intent.getStringExtra("cod_fac");
+		ano_ingresso = intent.getStringExtra("ano_ingresso");
+		consulta = intent.getStringExtra("consulta");
 		
 		try{
 			ChamadaWebService chamadaWebService = new ChamadaWebService(this);
@@ -132,7 +145,7 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
         protected String doInBackground(Integer... paramss) {
     		try{
 				listaAnoLetivo = new ArrayList<HashMap<String,String>>();
-	    		listaAnoLetivo = consultaAnoSemestreService.obterAnoSemestre();
+	    		listaAnoLetivo = consultaAnoSemestreService.obterAnoSemestre(cod_fac,cod_curso,ano_ingresso);
 	    		return "SUCESSO";
     		}catch(Exception e){
     			return e.getMessage();
@@ -165,10 +178,16 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 	                String anoletivo = ((TextView) view.findViewById(R.id.anoletivo)).getText().toString();
 	                String semestre = ((TextView) view.findViewById(R.id.semestre)).getText().toString();
 	                Intent in = null;
-                	in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
+	                if(consulta.equals("notas"))
+	                	in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
+	                else
+	                	in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
 	        		in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
 	        		in.putExtra("anoletivo", anoletivo);
 	        		in.putExtra("semestre", semestre);
+	        		in.putExtra("cod_curso", cod_curso);
+	        		in.putExtra("cod_fac", cod_fac);
+	        		in.putExtra("ano_ingresso", ano_ingresso);
 	        		startActivity(in);
 	            }
 	        });

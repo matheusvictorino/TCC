@@ -54,7 +54,7 @@ public class MenuActivity extends Activity {
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
-		TextView textCurso = (TextView) findViewById(R.id.textView1);
+		TextView textEmail = (TextView) findViewById(R.id.textView1);
 		
 
 		Intent intent = getIntent();
@@ -63,7 +63,7 @@ public class MenuActivity extends Activity {
 		aluno = gson.fromJson( alunoJson , Aluno.class);
 		textNome.setText(aluno.nomealuno);
 		textRa.setText(aluno.ra);
-		textCurso.setText(aluno.descricao_curso);
+		textEmail.setText(aluno.email);
 					
 	}
 
@@ -85,7 +85,7 @@ public class MenuActivity extends Activity {
 	}
 	
 	public void onClickConsultarNotas(View view) {
-		Intent in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
+		Intent in = new Intent(getApplicationContext(), ConsultaCursoActivity.class);
 		in.putExtra("aluno", new Gson().toJson(aluno));
 		in.putExtra("consulta", "notas");
 		startActivity(in);
@@ -93,10 +93,9 @@ public class MenuActivity extends Activity {
 	}
 	
 	public void onClickConsultarFaltas(View view) {
-		Intent in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
+		Intent in = new Intent(getApplicationContext(), ConsultaCursoActivity.class);
 		in.putExtra("aluno", new Gson().toJson(aluno));
-		in.putExtra("anoletivo", "");
-		in.putExtra("semestre", "");
+		in.putExtra("consulta", "faltas");
 		startActivity(in);
 
 	}

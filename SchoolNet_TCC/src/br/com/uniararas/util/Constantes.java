@@ -54,6 +54,14 @@ public interface Constantes {
     String TAG_SEMESTRE = "semestre";
     
     String TAG_ANO = "anolevito";
+
+    String TAG_CURSO = "curso";
+    
+    String TAG_COD_CURSO = "cod_curso";
+    
+    String TAG_COD_FAC = "cod_fac";
+
+    String TAG_ANOR_INGRESSO = "ano_ingresso";
     
 	String TAG_NUMERO_FALTAS = "numerofaltas";
 	
@@ -68,10 +76,16 @@ public interface Constantes {
 	String URL_OBTER_FALTAS = "faltas.php";
 	
 	String URL_OBTER_ANO_SEMESTRE = "ano-semestre.php";
+	
+	String URL_OBTER_CURSO = "sel_curso.php";
 
 	String AUTHORIZATION = "D52DAB2D6B0D0C8E64CBF6777077F6B7";
 	
 	String URL_ANO_LETIVO = "anoletivo";
 	
 	String URL_SEMESTRE = "semestre";
+	
+	String SELECIONE_CURSO = "Selecione o curso";
+
+	String SELECIONE_ANO_SEMESTRE = "Selecione o semestre e ano";
 }

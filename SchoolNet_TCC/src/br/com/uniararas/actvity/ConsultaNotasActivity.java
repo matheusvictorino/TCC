@@ -53,6 +53,9 @@ import br.com.uniararas.util.Constantes;
 public class ConsultaNotasActivity extends ListActivity {
 
 	private ConsultarNotasService consultarNotasService = new ConsultarNotasService();
+	private String cod_curso;
+	private String cod_fac;
+	private String ano_ingresso;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,9 @@ public class ConsultaNotasActivity extends ListActivity {
 		String anoletivo = intent.getStringExtra("anoletivo");
 		String semestre = intent.getStringExtra("semestre");
 		textAnoSemestre.setText(semestre + "º Semestre do ano de " + anoletivo);
+		cod_curso = intent.getStringExtra("cod_curso");
+		cod_fac = intent.getStringExtra("cod_fac");
+		ano_ingresso = intent.getStringExtra("ano_ingresso");
 		
 		try {
 			ChamadaWebService chamadaWebService = new ChamadaWebService(this,anoletivo,semestre);
@@ -137,7 +143,7 @@ public class ConsultaNotasActivity extends ListActivity {
 	        protected String doInBackground(Integer... paramss) {
 	    		try{
 	    			listaMaterias = new ArrayList<HashMap<String,String>>();
-					listaMaterias = consultarNotasService.obterNotas(anoletivo,semestre);
+					listaMaterias = consultarNotasService.obterNotas(cod_fac,cod_curso,ano_ingresso,anoletivo,semestre);
 		    		return "SUCESSO";
 	    		}catch(Exception e){
 	    			return e.getMessage();

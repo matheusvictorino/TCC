@@ -53,6 +53,9 @@ import br.com.uniararas.util.Constantes;
 public class ConsultaFaltasActivity extends ListActivity {
 
 	private ConsultaFaltasService consultaFaltasService = new ConsultaFaltasService();
+	private String cod_curso;
+	private String cod_fac;
+	private String ano_ingresso;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,9 @@ public class ConsultaFaltasActivity extends ListActivity {
 		Intent intent = getIntent();
 		String anoletivo = intent.getStringExtra("anoletivo");
 		String semestre = intent.getStringExtra("semestre");
+		cod_curso = intent.getStringExtra("cod_curso");
+		cod_fac = intent.getStringExtra("cod_fac");
+		ano_ingresso = intent.getStringExtra("ano_ingresso");
 		
 		try{
 			ChamadaWebService chamadaWebService = new ChamadaWebService(this,anoletivo,semestre);
@@ -135,7 +141,7 @@ public class ConsultaFaltasActivity extends ListActivity {
 	        protected String doInBackground(Integer... paramss) {
 	    		try{
 	    			listaMaterias = new ArrayList<HashMap<String,String>>();
-	    			listaMaterias = consultaFaltasService.obterFaltas(anoletivo,semestre);
+	    			listaMaterias = consultaFaltasService.obterFaltas(cod_fac,cod_curso,ano_ingresso,anoletivo,semestre);
 		    		return "SUCESSO";
 	    		}catch(Exception e){
 	    			return e.getMessage();

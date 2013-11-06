@@ -1,14 +1,13 @@
 package br.com.uniararas.services;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.com.uniararas.beans.AnoSemestre;
+import br.com.uniararas.beans.Curso;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.util.Constantes;
 /**
@@ -43,13 +42,14 @@ import br.com.uniararas.util.Constantes;
  *
  *   Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-public class ConsultaAnoSemestreService {
+public class ConsultaCursoService {
 	
-	public ArrayList<HashMap<String,String>> obterAnoSemestre(String cod_fac, String cod_curso, String ano_ingresso) throws Exception {
-		ArrayList<HashMap<String,String>> listaAnoSemestre = new ArrayList<HashMap<String,String>>();
-		ArrayList<AnoSemestre> anosSemestres = new ArrayList<AnoSemestre>();
+	public ArrayList<HashMap<String,String>> obterCurso() throws Exception {
+		ArrayList<HashMap<String,String>> listaCursos = new ArrayList<HashMap<String,String>>();
+		ArrayList<Curso> cursos = new ArrayList<Curso>();
 		try {
-			String url = Constantes.URL_OBTER_ANO_SEMESTRE + "?cod_fac=" + cod_fac + "&cod_curso=" + cod_curso + "&ano_ingresso=" + ano_ingresso;
+			String url = Constantes.URL_OBTER_CURSO;
+			
 			WebServiceCall webServiceCall = WebServiceCall.getInstance();
 			String[] resposta = webServiceCall.get(url);
 			
@@ -64,20 +64,22 @@ public class ConsultaAnoSemestreService {
 			while(keys.hasNext()){
 				String key = keys.next();
 				JSONObject value = mainObject.getJSONObject(key);
-				AnoSemestre a = new AnoSemestre();
-				a.anolevito = value.getString("anolevito");
-				a.semestre = value.getString("semestre");
-				anosSemestres.add(a);
+				Curso curso = new Curso();
+				curso.descricao = value.getString("descricao_curso");
+				curso.cod_fac = value.getString("cod_fac");
+				curso.cod_curso = value.getString("cod_curso");
+				curso.ano_ingresso = value.getString("ano_ingresso");
+				cursos.add(curso);
+				
 			}
 			
-			
-			Collections.sort(anosSemestres);
-			Collections.reverse(anosSemestres);
-			for(AnoSemestre anosS : anosSemestres){
+			for(Curso curso : cursos){
 				HashMap<String, String> map = new HashMap<String, String>();
-				map.put(Constantes.TAG_ANO, anosS.anolevito);
-				map.put(Constantes.TAG_SEMESTRE, anosS.semestre);
-				listaAnoSemestre.add(map);
+				map.put(Constantes.TAG_CURSO, curso.descricao);
+				map.put(Constantes.TAG_COD_CURSO, curso.cod_curso);
+				map.put(Constantes.TAG_COD_FAC, curso.cod_fac);
+				map.put(Constantes.TAG_ANOR_INGRESSO, curso.ano_ingresso);
+				listaCursos.add(map);
 			}
 			
 		} catch (JSONException e) {
@@ -85,6 +87,6 @@ public class ConsultaAnoSemestreService {
 		} catch (Exception e) {
 			throw new JSONException(e.getMessage());	
 		}
-		return listaAnoSemestre;
+		return listaCursos;
 	}
 }

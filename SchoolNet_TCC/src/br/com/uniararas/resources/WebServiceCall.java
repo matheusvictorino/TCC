@@ -156,12 +156,12 @@ public class WebServiceCall {
 
 	}
 	
-	public final String[] get(String ano, String semestre,String urlLocal) throws Exception {
+	public final String[] get(String url) throws Exception {
 		String[] result = new String[2];
 		try {
-			String url = Constantes.URL_PADRAO + urlLocal;
+			url = Constantes.URL_PADRAO + url;
 
-			HttpGet httpGet = new HttpGet(new URI(url+"?" + Constantes.URL_ANO_LETIVO +"="+ ano + "&" + Constantes.URL_SEMESTRE+"="+ semestre));
+			HttpGet httpGet = new HttpGet(new URI(url));
 			httpGet.setHeader("Content-type", "application/json");
 			httpGet.setHeader("Content-type", "application/x-www-form-urlencoded");
 			

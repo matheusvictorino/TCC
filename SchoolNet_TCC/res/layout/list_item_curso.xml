@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="15dp"
+    tools:context=".ConsultaCursoActivity" >
+
+    <TableLayout
+   	    android:layout_width="match_parent"
+   	    android:layout_height="30dp"
+   	    android:shrinkColumns="3" >
+
+   	    <TableRow
+   	        android:id="@+id/tableRow2"
+   	        android:layout_width="wrap_content"
+   	        android:layout_height="wrap_content"
+   	        android:layout_weight=".25" >
+
+   	        <TextView
+   	            android:id="@+id/curso"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_gravity="center|left"
+   	            android:layout_marginLeft="10dp"
+   	            android:gravity="left"
+   	            android:text="Sistemas de Informação"
+   	            android:textColor="#4F94CD"
+   	            android:textSize="16sp"
+   	            android:textStyle="bold" />
+
+   	        <TextView
+   	            android:id="@+id/cod_fac"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:visibility="invisible" />
+
+   	        <TextView
+   	            android:id="@+id/cod_curso"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:visibility="invisible" />
+
+   	        <TextView
+   	            android:id="@+id/ano_ingresso"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:visibility="invisible" />
+
+   	    </TableRow>
+   	</TableLayout>
+   	
+</LinearLayout>
