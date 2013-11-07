@@ -45,6 +45,16 @@
 
     <include layout="@layout/barra_superior"/>
 
+    <include
+        android:id="@+id/barra_inf_curso"
+        layout="@layout/barra_inf_curso"
+        android:visibility="invisible" />
+    
+    <include
+        android:id="@+id/barra_informacao"
+        layout="@layout/barra_informacoes"
+        android:visibility="visible" />
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,6 +65,7 @@
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="top"
             android:background="#ffffff" >
 
         </ListView>
