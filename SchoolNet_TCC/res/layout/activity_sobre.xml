@@ -128,8 +128,26 @@
                     android:text="@string/desenvolvedor_dois"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textSize="16sp" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="0dp"
+                    android:text="Orientador"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Prof. Rogério Cardoso"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="16sp" />
 
             </LinearLayout>
+            
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -145,7 +163,7 @@
                     android:layout_gravity="center"
                     android:text="@string/este_programa_software_livre"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/ImageView01"
