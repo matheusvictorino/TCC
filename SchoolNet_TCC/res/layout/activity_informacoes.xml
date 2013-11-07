@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#363636"
+                    android:background="#000000"
                     android:orientation="vertical" >
 
                     <TextView
@@ -136,7 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#363636"
+                    android:background="#000000"
                     android:orientation="vertical" >
 
                     <TextView
@@ -185,87 +185,6 @@
                         android:onClick="onClickSobre" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#363636"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/TextView07"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Curso"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="#ffffff" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/TextView06"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Sistemas de Informação"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:id="@+id/TextView09"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="SITE DO CURSO"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:id="@+id/TextView05"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:text="Coordenador"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:id="@+id/TextView08"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="0dp"
-                        android:text="Prof. Rogério Cardoso"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:id="@+id/TextView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="0dp"
-                        android:text="prof.rogeriocardoso@gmail.com"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
