@@ -45,12 +45,23 @@
 
     <include layout="@layout/barra_superior"/>
 
+    <include
+        android:id="@+id/barra_inf_curso"
+        layout="@layout/barra_inf_curso"
+        android:visibility="invisible" />
+    
+    <include
+        android:id="@+id/barra_informacao"
+        layout="@layout/barra_informacoes"
+        android:visibility="visible" />
+    
     <LinearLayout
 			style="@style/LayoutListStyle" >
 
         <ListView
             android:id="@android:id/list"
 			style="@style/ListsListViewStyle">
+
 
         </ListView>
 

@@ -31,7 +31,7 @@ public class ConsultaCursoActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_lista_notas);
+		setContentView(R.layout.activity_lista);
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
@@ -129,6 +129,7 @@ public class ConsultaCursoActivity extends ListActivity {
 		                String cod_curso = ((TextView) view.findViewById(R.id.cod_curso)).getText().toString();
 		                String cod_fac = ((TextView) view.findViewById(R.id.cod_fac)).getText().toString();
 		                String ano_ingresso = ((TextView) view.findViewById(R.id.ano_ingresso)).getText().toString();
+		                String descricao_curso = ((TextView) view.findViewById(R.id.curso)).getText().toString();
 		                
 		                Intent in = null;
 	                	in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
@@ -137,6 +138,7 @@ public class ConsultaCursoActivity extends ListActivity {
 		        		in.putExtra("cod_curso", cod_curso);
 		        		in.putExtra("cod_fac", cod_fac);
 		        		in.putExtra("ano_ingresso", ano_ingresso);
+		        		in.putExtra("descricao_curso", descricao_curso);
 		        		startActivity(in);
 		            }
 		        });

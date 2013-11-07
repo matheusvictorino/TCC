@@ -56,6 +56,7 @@ public class ConsultaFaltasActivity extends ListActivity {
 	private String cod_curso;
 	private String cod_fac;
 	private String ano_ingresso;
+	private String cursoNome;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -64,11 +65,17 @@ public class ConsultaFaltasActivity extends ListActivity {
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
-		TextView textCurso = (TextView) findViewById(R.id.textView1);
-			
+		TextView textEmail = (TextView) findViewById(R.id.textView1);
+		TextView textAnoSemestre = (TextView) findViewById(R.id.ano_semestre);
+		TextView nomeCurso = (TextView) findViewById(R.id.nome_curso);
+		
+		View barra_inf = (View) findViewById(R.id.barra_inf_curso);
+		
+		barra_inf.setVisibility(View.VISIBLE);
 		textNome.setText(MenuActivity.aluno.nomealuno);
 		textRa.setText(MenuActivity.aluno.ra);
-		textCurso.setText(MenuActivity.aluno.descricao_curso);
+		textEmail.setText(MenuActivity.aluno.email);
+		
 
 		Intent intent = getIntent();
 		String anoletivo = intent.getStringExtra("anoletivo");
@@ -76,6 +83,9 @@ public class ConsultaFaltasActivity extends ListActivity {
 		cod_curso = intent.getStringExtra("cod_curso");
 		cod_fac = intent.getStringExtra("cod_fac");
 		ano_ingresso = intent.getStringExtra("ano_ingresso");
+		cursoNome = intent.getStringExtra("descricao_curso");
+		nomeCurso.setText(cursoNome);
+		textAnoSemestre.setText(semestre + "º Semestre do ano de " + anoletivo);
 		
 		try{
 			ChamadaWebService chamadaWebService = new ChamadaWebService(this,anoletivo,semestre);

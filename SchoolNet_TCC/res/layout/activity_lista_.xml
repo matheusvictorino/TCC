@@ -45,10 +45,6 @@
 
     <include layout="@layout/barra_superior"/>
 
-    <include
-        layout="@layout/barra_ano_semestre"
-        android:visibility="visible" />
-
     <LinearLayout
 			style="@style/LayoutListStyle" >
 

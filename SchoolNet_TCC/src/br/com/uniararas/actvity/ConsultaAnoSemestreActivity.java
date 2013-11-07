@@ -41,6 +41,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,17 +64,22 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 	private String cod_fac;
 	private String ano_ingresso;
 	private String consulta;
+	private String cursoNome;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_lista_notas);
+		setContentView(R.layout.activity_lista);
 		
 		TextView textNome = (TextView) findViewById(R.id.textView10);
 		TextView textRa = (TextView) findViewById(R.id.textView11);
 		TextView textEmai = (TextView) findViewById(R.id.textView1);
 		TextView textCurso = (TextView) findViewById(R.id.ano_semestre);
-			
+		TextView nomeCurso = (TextView) findViewById(R.id.nome_curso);
+		
+		View barra_inf = (View) findViewById(R.id.barra_inf_curso);
+		
+		barra_inf.setVisibility(View.VISIBLE);
 		textNome.setText(MenuActivity.aluno.nomealuno);
 		textRa.setText(MenuActivity.aluno.ra);
 		textEmai.setText(MenuActivity.aluno.email);
@@ -84,6 +90,8 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 		cod_fac = intent.getStringExtra("cod_fac");
 		ano_ingresso = intent.getStringExtra("ano_ingresso");
 		consulta = intent.getStringExtra("consulta");
+		cursoNome = intent.getStringExtra("descricao_curso");
+		nomeCurso.setText(cursoNome);
 		
 		try{
 			ChamadaWebService chamadaWebService = new ChamadaWebService(this);
@@ -188,6 +196,7 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 	        		in.putExtra("cod_curso", cod_curso);
 	        		in.putExtra("cod_fac", cod_fac);
 	        		in.putExtra("ano_ingresso", ano_ingresso);
+	        		in.putExtra("descricao_curso", cursoNome);
 	        		startActivity(in);
 	            }
 	        });
