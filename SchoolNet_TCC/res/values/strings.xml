@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">SchoolNet FHO</string>
-    <string name="action_settings">Sobre</string>
+	<string name="action_settings">Sobre</string>
+	<string name="Ano">do Ano de</string>
+	<string name="ano_formatura">Sistemas de Informação 2013</string>
+    <string name="app_name">Uniararas Mobile</string>
+    <string name="autores">Gerson Donscoi Jr, Leandro M. M. Oliveira</string>
+    <string name="Copyright">Copyright 2013</string>
+    <string name="desenvolvedores">Desenvolvedores</string>
+    <string name="desenvolvedor_dois" >Leandro Motta M. Oliveira</string>
+    <string name="desenvolvedor_dois_email">leandrommoliveira@gmail.com</string>
+    <string name="desenvolvedor_um">Gerson Donscoi Junior</string>
+    <string name="desenvolvedor_um_email">donscoijr@gmail.com</string>
+    <string name="Erro">Erro</string>
+    <string name="este_programa_software_livre">Este programa é um software livre</string>
+    <string name="GNU_GPL">GNU GPL</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="title_activity_lista">Consulta Lista</string>
-    <string name="title_activity_consulta_ano_semestre">ConsultaAnoSemestreActivity</string>
-    <string name="Ano">do Ano de</string>
-    <string name="numeroSemestre">º - Semestre</string>
+   	<string name="historia_p1">A história do Centro Universitário Hermínio Ometto (UNIARARAS), instituição de ensino superior privada, pluricurricular, sem fins lucrativos, caminha lado a lado com a história de nossa mantenedora, a Fundação Hermínio Ometto (antes Fundação Regional de Ensino Superior de Araras - Fresa), assim denominada desde 1986, em homenagem a nosso patrono, Dr. Hermínio Ometto.</string>
+    <string name="historia_p2">Da criação da Fresa, em 1973, à aprovação da primeira faculdade por parte do Conselho Estadual de Educação (CEE) transcorreram apenas dez meses. A Faculdade de Ciências Biológicas, a primeira a ser pleiteada, foi instalada a princípio no bairro Belvedere, em Araras. Anos mais tarde, precisamente em 1978, já contávamos com estrutura própria e avançadas instalações, hoje em sua maioria ampliadas.</string>
+    <string name="Historia">História</string>
+    <string name="informacoes">Informações</string>
+    <string name="Leia_mais">Leia mais em: www.uniararas.com.br</string>
     <string name="limiteFaltas">Limite de Faltas</string>
-    <string name="numeroFaltas">Número de Faltas</string>
-    <string name="title_activity_erro">ErroActivity</string>
-    <string name="title_activity_sobre">Sobre</string>
-    <string name="title_activity_informacoes">InformacoesActivity</string>
-    <string name="nossa_missao_fho">\"Promover a aprendizagem, a geração e a difusão do conhecimento, formando o profissional competente e o cidadão compromissado com a construção de uma sociedade justa\"</string>
-    <string name="title_activity_localizacao">LocalizacaoActivity</string>
-    <string name="localizacao_rua">Av. Dr. Maximiliano Baruto, 500</string>
+    <string name="Large_Text">Large Text</string>
     <string name="localizacao_bairro">Jd. Universitário</string>
     <string name="localizacao_cep">CEP: 13607-339</string>
-    <string name="localizacao_tel">Tel: (19) 3543-1400</string>
     <string name="localizacao_cidade">Araras - SP</string>
-    <string name="title_activity_historia">HistoriaActivity</string>
-    <string name="historia_p1">A história do Centro Universitário Hermínio Ometto (UNIARARAS), instituição de ensino superior privada, pluricurricular, sem fins lucrativos, caminha lado a lado com a história de nossa mantenedora, a Fundação Hermínio Ometto (antes Fundação Regional de Ensino Superior de Araras - Fresa), assim denominada desde 1986, em homenagem a nosso patrono, Dr. Hermínio Ometto.</string>
-    <string name="historia_p2">Da criação da Fresa, em 1973, à aprovação da primeira faculdade por parte do Conselho Estadual de Educação (CEE) transcorreram apenas dez meses. A Faculdade de Ciências Biológicas, a primeira a ser pleiteada, foi instalada a princípio no bairro Belvedere, em Araras. Anos mais tarde, precisamente em 1978, já contávamos com estrutura própria e avançadas instalações, hoje em sua maioria ampliadas.</string>
+    <string name="localizacao_rua">Av. Dr. Maximiliano Baruto, 500</string>
+    <string name="localizacao_tel">Tel: (19) 3543-1400</string>
+    <string name="nome_instituicao">Fundação Herminio Ometto</string>
+    <string name="nossa_missao_fho">\"Promover a aprendizagem, a geração e a difusão do conhecimento, formando o profissional competente e o cidadão compromissado com a construção de uma sociedade justa\"</string>
+    <string name="numeroFaltas">Número de Faltas</string>
+    <string name="numeroSemestre">º - Semestre</string>
     <string name="title_activity_curso">CursoActivity</string>
-
+    <string name="title_activity_consulta_ano_semestre">ConsultaAnoSemestreActivity</string>
+    <string name="title_activity_erro">ErroActivity</string>
+    <string name="title_activity_historia">HistoriaActivity</string>
+    <string name="title_activity_informacoes">InformacoesActivity</string>
+    <string name="title_activity_lista">Consulta Lista</string>
+    <string name="title_activity_localizacao">LocalizacaoActivity</string>    
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_sobre">Sobre</string>
+    <string name="trabalho_conclusao_curso">Trabalho de Conclusão de Curso</string>
+    <string name="versao">Versão 1.1</string>
 </resources>

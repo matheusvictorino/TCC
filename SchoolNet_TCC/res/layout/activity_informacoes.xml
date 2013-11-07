@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="8dp"
-            android:text="Informações"
+            android:text="@string/informacoes"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#ffffff"
             android:textSize="35sp" />
@@ -71,7 +71,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -89,10 +89,8 @@
 
                     <TextView
                         android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Fundação Herminio Ometto"
+						style="@style/InfoAlignStyle"
+                        android:text="@string/nome_instituicao"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="#ffffff" />
 
@@ -108,29 +106,21 @@
 
                     <TextView
                         android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/nossa_missao_fho"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16sp" />
+                        style="@style/InfoNamesStyle" />
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/button1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                	style="@style/InfoAlignStyle"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/botao_localizacao"
                     android:onClick="onClickLocalizacao" />
 
                 <Button
                     android:id="@+id/Button02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+               		style="@style/InfoAlignStyle"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/botao_historia_uniararas"
                     android:onClick="onClickHistoria" />
@@ -151,10 +141,8 @@
 
                     <TextView
                         android:id="@+id/TextView01"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Desenvolvedores"
+             			style="@style/InfoAlignStyle"
+                        android:text="@string/desenvolvedores"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="#ffffff" />
                 </LinearLayout>
@@ -169,56 +157,34 @@
 
                     <TextView
                         android:id="@+id/TextView02"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Gerson Donscoi Junior"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
+                      	style="@style/InfoNamesStyle"
+                        android:text="@string/desenvolvedor_um"/>
 
                     <TextView
                         android:id="@+id/TextView03"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="donscoijr@gmail.com"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
+                   		style="@style/InfoNamesStyle"
+                        android:text="@string/desenvolvedor_um_email"/>
 
                     <TextView
                         android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                       	style="@style/InfoNamesStyle"
                         android:layout_marginTop="5dp"
-                        android:text="Leandro Motta M. Oliveira"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
+                        android:text="@string/desenvolvedor_dois"/>
 
                     <TextView
                         android:id="@+id/TextView04"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_marginTop="0dp"
-                        android:text="leandrommoliveira@gmail.com"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16dp" />
+                        style="@style/InfoNamesStyle"
+                        android:text="@string/desenvolvedor_dois_email"/>
 
                     <Button
                         android:id="@+id/Button03"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+						style="@style/InfoAlignStyle"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/botao_sobre"
                         android:onClick="onClickSobre" />
-
                 </LinearLayout>
-
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

@@ -48,6 +48,7 @@
 	<include layout="@layout/barra_superior"/>
 
 	<LinearLayout
+	    android:baselineAligned="false"
 	    android:layout_width="match_parent"
 	    android:layout_height="125dp"
 	    android:layout_marginTop="30dp"
