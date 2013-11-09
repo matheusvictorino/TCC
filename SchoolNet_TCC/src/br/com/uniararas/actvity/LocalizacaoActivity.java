@@ -1,10 +1,16 @@
 package br.com.uniararas.actvity;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
  * 
@@ -63,4 +69,43 @@ public class LocalizacaoActivity extends Activity {
 	    }
 	}
 	
+	public boolean onClickMapa(View view) {
+		if(!testConnection()){
+			toast("Você Precisa estar conectado a internet antes de continuar");
+			return false;
+		}
+		 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + "-22.3743608,-47.3697969"));
+	        startActivity(i);
+     	return true;
+	 }
+	
+	public boolean onClickTel(View view) {
+		Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 1935431400));
+        startActivity(i);
+		return true;
+	}
+	
+	private boolean testConnection() { 
+        boolean conection = false;
+        try
+        {
+            ConnectivityManager cm = (ConnectivityManager)
+            getSystemService(Context.CONNECTIVITY_SERVICE); 
+            if (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) { 
+            	conection = true; 
+            } 
+        }catch (Exception e) {
+            trace(e.getMessage());
+        }
+        return conection;
+    }
+	
+    public void toast (String msg){
+        Toast.makeText (getApplicationContext(), msg, Toast.LENGTH_SHORT).show ();
+    } 
+ 
+    private void trace (String msg){
+        Log.d ("teste", msg);
+        toast (msg);
+    } 
 }

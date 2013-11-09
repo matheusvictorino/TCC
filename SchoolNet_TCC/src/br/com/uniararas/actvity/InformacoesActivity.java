@@ -1,11 +1,15 @@
 package br.com.uniararas.actvity;
 
-import android.os.Bundle;
+import br.com.uniararas.util.Constantes;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
  * 
@@ -40,10 +44,13 @@ import android.view.View;
 */
 public class InformacoesActivity extends Activity {
 
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_informacoes);
+		
 	}
 
 	@Override
@@ -81,4 +88,10 @@ public class InformacoesActivity extends Activity {
 		            return super.onOptionsItemSelected(item);
 		    }
 		}
+		
+		public boolean onClickFB(View view) {
+			Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.LINK_FACEBOOK_SI));
+	        startActivity(i);
+	     	return true;
+		 }
 }

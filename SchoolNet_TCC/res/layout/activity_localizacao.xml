@@ -134,10 +134,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:clickable="true"
                         android:gravity="center"
+                        android:onClick="onClickTel"
                         android:text="@string/localizacao_tel"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic" />
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -148,12 +152,14 @@
                 android:layout_marginTop="5dp"
                 android:orientation="vertical" >
 
-                <ImageView
-                    android:id="@+id/imageView1"
+                <Button
+                    android:id="@+id/button1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/mapa" />
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/botao_mapa"
+                    android:onClick="onClickMapa" />
 
             </LinearLayout>
         </LinearLayout>
