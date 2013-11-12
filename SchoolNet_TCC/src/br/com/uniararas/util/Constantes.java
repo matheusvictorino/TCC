@@ -67,7 +67,7 @@ public interface Constantes {
 	
 	String TAG_NUMERO_FALTAS_LIMITE = "numerofaltaslimite";
 	
-	String URL_PADRAO = "https://www1.uniararas.br/schoolnet/2013/consulta-notas/";
+	String URL_PADRAO = "url_padrao";
 	
 	String URL_AUTENTICAR = "autentica.php";
 	
@@ -79,7 +79,7 @@ public interface Constantes {
 	
 	String URL_OBTER_CURSO = "sel_curso.php";
 
-	String AUTHORIZATION = "D52DAB2D6B0D0C8E64CBF6777077F6B7";
+	String AUTHORIZATION = "hash";
 	
 	String URL_ANO_LETIVO = "anoletivo";
 	

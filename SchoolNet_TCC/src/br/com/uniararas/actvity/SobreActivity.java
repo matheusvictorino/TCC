@@ -1,7 +1,6 @@
 package br.com.uniararas.actvity;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira

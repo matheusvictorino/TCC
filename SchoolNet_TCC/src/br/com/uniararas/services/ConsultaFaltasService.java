@@ -59,22 +59,6 @@ public class ConsultaFaltasService {
 			if(!resposta[0].equals("200"))
 				throw new Exception("Erro ao obter faltas.");
 			
-//			java.lang.reflect.Type listType = new TypeToken<List<Materias>>() {}.getType();
-//			List<Materias> materias = new Gson().fromJson( resposta[1].trim() , listType);
-//			
-//			listaMaterias = new ArrayList<HashMap<String,String>>();
-//			
-//			for (Materias materia : materias){
-//				
-//				HashMap<String, String> map = new HashMap<String, String>();
-//				
-//				map.put(Constantes.TAG_NOME_MATERIA, materia.nomemateria);
-//				map.put(Constantes.TAG_NUMERO_FALTAS, materia.numerofaltas);
-//				map.put(Constantes.TAG_NUMERO_FALTAS_LIMITE, materia.numerofaltaslimite);
-//
-//				listaMaterias.add(map);
-//			}
-			
 			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			
 			@SuppressWarnings("unchecked")

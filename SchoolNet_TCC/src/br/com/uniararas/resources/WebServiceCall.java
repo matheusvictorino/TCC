@@ -7,6 +7,7 @@ import java.net.URI;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -76,8 +77,10 @@ public class WebServiceCall {
 	private DefaultHttpClient httpclient;
 	private BasicHttpParams httpParameters;
 	private static WebServiceCall instance;
+	private Properties props;
 	
 	private WebServiceCall(){
+		loadProperties();
 		httpParameters = new BasicHttpParams();
 		HttpProtocolParams.setVersion(httpParameters, HttpVersion.HTTP_1_1);
         HttpProtocolParams.setContentCharset(httpParameters, HTTP.UTF_8);
@@ -121,7 +124,7 @@ public class WebServiceCall {
 	        registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
 	        registry.register(new Scheme("https", sf, 443));
 		        
-			String url = Constantes.URL_PADRAO + urlLocal;
+			String url = this.props.getProperty(Constantes.URL_PADRAO) + urlLocal;
 
 			HttpPost httpPost = new HttpPost(new URI(url));
 			httpPost.setHeader("Content-type", "application/json");
@@ -130,7 +133,7 @@ public class WebServiceCall {
 			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
             nameValuePairs.add(new BasicNameValuePair("txtUser", aluno.ra));
             nameValuePairs.add(new BasicNameValuePair("txtSenha", aluno.getSenha()));
-            nameValuePairs.add(new BasicNameValuePair("hash", Constantes.AUTHORIZATION));
+            nameValuePairs.add(new BasicNameValuePair("hash", this.props.getProperty(Constantes.AUTHORIZATION)));
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 			HttpResponse response;
@@ -159,7 +162,7 @@ public class WebServiceCall {
 	public final String[] get(String url) throws Exception {
 		String[] result = new String[2];
 		try {
-			url = Constantes.URL_PADRAO + url;
+			url = this.props.getProperty(Constantes.URL_PADRAO) + url;
 
 			HttpGet httpGet = new HttpGet(new URI(url));
 			httpGet.setHeader("Content-type", "application/json");
@@ -202,6 +205,17 @@ public class WebServiceCall {
 	private void exibeHeaders(Header[] headers) {
 		for (Header header : headers) {
 			Log.d("Key : ", header.getName() + header.getValue());
+		}
+	}
+	
+	private void loadProperties(){
+		try {
+			this.props=new Properties();
+			InputStream inputStream = 
+			this.getClass().getClassLoader().getResourceAsStream("config/webservice.properties");
+			props.load(inputStream);
+		} catch (IOException e) {
+			Log.e("ERRO AO CARREGAR PROPERTIES",e.getMessage());
 		}
 	}
 }
