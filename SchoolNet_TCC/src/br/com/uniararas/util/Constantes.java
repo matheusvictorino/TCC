@@ -90,4 +90,6 @@ public interface Constantes {
 	String SELECIONE_ANO_SEMESTRE = "Selecione o semestre e ano";
 	
 	String LINK_FACEBOOK_SI = "https://www.facebook.com/SistemasdeInformacaoFHOUniararas";
+	
+	String LINK_UNIARARAS = "https://www.uniararas.br";
 }

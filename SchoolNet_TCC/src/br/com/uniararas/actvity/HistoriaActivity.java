@@ -1,10 +1,13 @@
 package br.com.uniararas.actvity;
 
+import br.com.uniararas.util.Constantes;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
  * 
@@ -62,5 +65,11 @@ public class HistoriaActivity extends Activity {
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
+	
+	public boolean onClickMaisInf(View view) {
+		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Constantes.LINK_UNIARARAS));
+        startActivity(i);
+     	return true;
+	 }
 	
 }

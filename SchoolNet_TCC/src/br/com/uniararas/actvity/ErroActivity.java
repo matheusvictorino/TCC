@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 /**
@@ -63,4 +64,14 @@ public class ErroActivity extends Activity {
 		finish();
 	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	Intent in = new Intent(getApplicationContext(), SobreActivity.class);
+	        	startActivity(in);
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 }

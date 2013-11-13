@@ -1,7 +1,9 @@
 package br.com.uniararas.actvity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
  * 
@@ -40,6 +42,17 @@ public class SobreActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sobre);		
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	Intent in = new Intent(getApplicationContext(), SobreActivity.class);
+	        	startActivity(in);
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 
 }

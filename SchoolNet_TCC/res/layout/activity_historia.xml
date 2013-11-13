@@ -1,4 +1,4 @@
-<!-- 
+<!--
 /**
  *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
  * 
@@ -30,14 +30,13 @@
  *   junto com este programa, se não, escreva para a Fundação do Software
  *
  *   Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
- -->
+*/-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
@@ -69,34 +68,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/TextView07"
+                    style="@style/InfoAlignStyle"
+                    android:gravity="left"
+                    android:text="@string/historia_p1" />
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    style="@style/InfoAlignStyle"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="vertical" >
+                    android:layout_marginTop="10dp"
+                    android:gravity="left"
+                    android:text="@string/historia_p2" />
 
-                    <TextView
-                        android:id="@+id/TextView07"
-                        android:gravity="left"
-                        android:text="@string/historia_p1"
-						style="@style/InfoAlignStyle"/>
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/botao_mais_informacoes"
+                    android:onClick="onClickMaisInf" />
 
-                    <TextView
-                        android:id="@+id/TextView05"
-                        android:layout_marginTop="10dp"
-                        android:gravity="left"
-                        android:text="@string/historia_p2"
-						style="@style/InfoAlignStyle"/>
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/TextView06"
-						style="@style/InfoAlignStyle"
-                        android:layout_marginTop="15dp"
-                        android:gravity="center"
-                        android:text="@string/Leia_mais" />
-                </LinearLayout>
-   		 </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
