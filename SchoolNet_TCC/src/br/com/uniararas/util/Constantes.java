@@ -92,4 +92,6 @@ public interface Constantes {
 	String LINK_FACEBOOK_SI = "https://www.facebook.com/SistemasdeInformacaoFHOUniararas";
 	
 	String LINK_UNIARARAS = "https://www.uniararas.br";
+	
+	String ERRO_LOGIN = "Não foi possível efetuar login";
 }

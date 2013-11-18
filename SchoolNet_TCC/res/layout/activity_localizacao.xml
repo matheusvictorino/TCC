@@ -139,6 +139,7 @@
                         android:onClick="onClickTel"
                         android:text="@string/localizacao_tel"
                         android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#1C86EE"
                         android:textSize="16sp"
                         android:textStyle="bold|italic" />
 

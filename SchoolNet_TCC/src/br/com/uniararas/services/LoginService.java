@@ -46,9 +46,8 @@ public class LoginService {
 			
 			JSONObject resp = new JSONObject(resposta[1].trim());
 			
-//			if(!resposta[0].equals("200"))
 			if(resp.get("autenticado").equals("N"))
-				throw new Exception(resp.get("mensagem").toString());
+				throw new Exception(Constantes.ERRO_LOGIN);
 			
 			return resposta;
 		}catch(Exception e){

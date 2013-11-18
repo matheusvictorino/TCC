@@ -72,8 +72,8 @@ public class WebServiceCall {
 	static JSONObject jObj = null;
 	static String json = "";
 	public String[] result;
-	private static final int JSON_CONNECTION_TIMEOUT = 3000;
-	private static final int JSON_SOCKET_TIMEOUT = 5000;
+	private static final int JSON_CONNECTION_TIMEOUT = 10000;
+	private static final int JSON_SOCKET_TIMEOUT = 10000;
 	private DefaultHttpClient httpclient;
 	private BasicHttpParams httpParameters;
 	private static WebServiceCall instance;
