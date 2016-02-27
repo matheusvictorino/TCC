@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+/**
+ *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
+ * 
+ *   Este arquivo é parte do programa SchoolNet Mobile
+ *
+ *
+ *   SchoolNet Mobile é um software livre; você pode redistribuí-lo e/ou 
+ *
+ *   modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ *
+ *   publicada pela Fundação do Software Livre (FSF); na versão 2 da 
+ *
+ *   Licença, ou (na sua opinião) qualquer versão.
+ *
+ *
+ *
+ *   Este programa é distribuído na esperança de que possa ser  útil, 
+ *
+ *   mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ *
+ *   MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+ *
+ *   Licença Pública Geral GNU para maiores detalhes.
+ *
+ *
+ *
+ *   Você deve ter recebido uma cópia da Licença Pública Geral GNU
+ *
+ *   junto com este programa, se não, escreva para a Fundação do Software
+ *
+ *   Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="horizontal" >
+  
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/materia"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="2dip"
+            android:paddingTop="6dip"
+            android:text="testestestestestes"
+            android:textColor="#4F94CD"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+   	<TableLayout
+   	    android:layout_width="match_parent"
+   	    android:layout_height="wrap_content"
+   	    android:shrinkColumns="3" >
+
+   	    <TableRow
+   	        android:id="@+id/tableRow2"
+   	        android:layout_width="wrap_content"
+   	        android:layout_height="wrap_content"
+   	        android:layout_marginLeft="5dp"
+   	        android:layout_weight=".25" >
+
+   	        <TextView
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_marginLeft="5dp"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="N1 "
+   	            android:textColor="#acacac"
+   	            android:textStyle="bold" />
+
+   	        <TextView
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_marginLeft="5dp"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="SPA"
+   	            android:textColor="#acacac"
+   	            android:textStyle="bold" />
+
+   	        <TextView
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_marginLeft="5dp"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="N2"
+   	            android:textColor="#acacac"
+   	            android:textStyle="bold" />
+
+   	        <TextView
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_marginLeft="5dp"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="Média Final"
+   	            android:textColor="#acacac"
+   	            android:textStyle="bold" />
+
+   	    </TableRow>
+
+   	    <TableRow
+   	        android:id="@+id/tableRow3"
+   	        android:layout_width="wrap_content"
+   	        android:layout_height="wrap_content"
+   	        android:layout_marginLeft="5dp"
+   	        android:layout_weight=".25" >
+
+   	        <TextView
+   	            android:id="@+id/primeiranota"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_gravity="center"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="10"
+   	            android:textColor="#5d5d5d"
+   	            android:textStyle="bold" />
+
+   	        <TextView
+   	            android:id="@+id/notaspa"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_gravity="center"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="10"
+   	            android:textColor="#5d5d5d"
+   	            android:textStyle="bold" />
+
+   	        <TextView
+   	            android:id="@+id/segundanota"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_gravity="center"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="10"
+   	            android:textColor="#5d5d5d"
+   	            android:textStyle="bold" />
+
+   	        <TextView
+   	            android:id="@+id/mediafinal"
+   	            android:layout_width="wrap_content"
+   	            android:layout_height="wrap_content"
+   	            android:layout_gravity="center"
+   	            android:layout_weight=".25"
+   	            android:gravity="left"
+   	            android:text="10"
+   	            android:textColor="#5d5d5d"
+   	            android:textStyle="bold" />
+
+   	    </TableRow>
+
+   	</TableLayout>
+
+    </LinearLayout>
+</LinearLayout>

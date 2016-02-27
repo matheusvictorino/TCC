@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_menu.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_semestre.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\list_item_semestre.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lista_.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_lista_.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sobre.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_sobre.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_informacoes.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_informacoes.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_curso.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\list_item_curso.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\barra_superior.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\barra_superior.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lista.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_lista.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_faltas.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\list_item_faltas.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_erro.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_erro.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_historia.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_historia.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_localizacao.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_localizacao.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\barra_informacoes.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\barra_informacoes.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\barra_inf_curso.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\barra_inf_curso.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_notas.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\list_item_notas.xml"
+    }
+]

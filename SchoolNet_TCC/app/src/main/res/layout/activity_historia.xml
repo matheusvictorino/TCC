@@ -1,0 +1,114 @@
+<!--
+/**
+ *   Copyright 2013 Gerson Donscoi Junior, Leandro Motta M. Oliveira
+ * 
+ *   Este arquivo é parte do programa SchoolNet Mobile
+ *
+ *
+ *   SchoolNet Mobile é um software livre; você pode redistribuí-lo e/ou 
+ *
+ *   modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ *
+ *   publicada pela Fundação do Software Livre (FSF); na versão 2 da 
+ *
+ *   Licença, ou (na sua opinião) qualquer versão.
+ *
+ *
+ *
+ *   Este programa é distribuído na esperança de que possa ser  útil, 
+ *
+ *   mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ *
+ *   MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+ *
+ *   Licença Pública Geral GNU para maiores detalhes.
+ *
+ *
+ *
+ *   Você deve ter recebido uma cópia da Licença Pública Geral GNU
+ *
+ *   junto com este programa, se não, escreva para a Fundação do Software
+ *
+ *   Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context=".HistoriaActivity" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="62dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#32849a"
+        android:gravity="top"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="8dp"
+            android:text="@string/Historia"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/TextView07"
+                    style="@style/InfoAlignStyle"
+                    android:gravity="left"
+                    android:text="@string/historia_p1" />
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    style="@style/InfoAlignStyle"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left"
+                    android:text="@string/historia_p2" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/botao_mais_informacoes"
+                    android:onClick="onClickMaisInf" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

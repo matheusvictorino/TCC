@@ -1,0 +1,190 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\.name
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* COPYING.txt
+* README.txt
+* app\
+* app\build.gradle
+* app\src\
+* app\src\main\
+* app\src\main\AndroidManifest.xml
+* app\src\main\java\
+* app\src\main\java\br\
+* app\src\main\java\br\com\
+* app\src\main\java\br\com\uniararas\
+* app\src\main\java\br\com\uniararas\actvity\
+* app\src\main\java\br\com\uniararas\actvity\ConsultaAnoSemestreActivity.java
+* app\src\main\java\br\com\uniararas\actvity\ConsultaCursoActivity.java
+* app\src\main\java\br\com\uniararas\actvity\ConsultaFaltasActivity.java
+* app\src\main\java\br\com\uniararas\actvity\ConsultaNotasActivity.java
+* app\src\main\java\br\com\uniararas\actvity\ErroActivity.java
+* app\src\main\java\br\com\uniararas\actvity\HistoriaActivity.java
+* app\src\main\java\br\com\uniararas\actvity\InformacoesActivity.java
+* app\src\main\java\br\com\uniararas\actvity\LocalizacaoActivity.java
+* app\src\main\java\br\com\uniararas\actvity\LoginActivity.java
+* app\src\main\java\br\com\uniararas\actvity\MenuActivity.java
+* app\src\main\java\br\com\uniararas\actvity\SobreActivity.java
+* app\src\main\java\br\com\uniararas\beans\
+* app\src\main\java\br\com\uniararas\beans\Aluno.java
+* app\src\main\java\br\com\uniararas\beans\AnoSemestre.java
+* app\src\main\java\br\com\uniararas\beans\Curso.java
+* app\src\main\java\br\com\uniararas\resources\
+* app\src\main\java\br\com\uniararas\resources\MySSLSocketFactory.java
+* app\src\main\java\br\com\uniararas\resources\TrustManager_SSL.java
+* app\src\main\java\br\com\uniararas\resources\WebServiceCall.java
+* app\src\main\java\br\com\uniararas\services\
+* app\src\main\java\br\com\uniararas\services\ConsultaAnoSemestreService.java
+* app\src\main\java\br\com\uniararas\services\ConsultaCursoService.java
+* app\src\main\java\br\com\uniararas\services\ConsultaFaltasService.java
+* app\src\main\java\br\com\uniararas\services\ConsultarNotasService.java
+* app\src\main\java\br\com\uniararas\services\LoginService.java
+* app\src\main\java\br\com\uniararas\util\
+* app\src\main\java\br\com\uniararas\util\Constantes.java
+* app\src\main\res\
+* app\src\main\res\drawable-hdpi\
+* app\src\main\res\drawable-hdpi\botao_facebook.png
+* app\src\main\res\drawable-hdpi\botao_faltas.png
+* app\src\main\res\drawable-hdpi\botao_faltas_background.xml
+* app\src\main\res\drawable-hdpi\botao_faltas_click.png
+* app\src\main\res\drawable-hdpi\botao_historia_uniararas.png
+* app\src\main\res\drawable-hdpi\botao_informacoes.png
+* app\src\main\res\drawable-hdpi\botao_localizacao.png
+* app\src\main\res\drawable-hdpi\botao_login.png
+* app\src\main\res\drawable-hdpi\botao_login_background.xml
+* app\src\main\res\drawable-hdpi\botao_login_click.png
+* app\src\main\res\drawable-hdpi\botao_mais_informacoes.png
+* app\src\main\res\drawable-hdpi\botao_mapa.png
+* app\src\main\res\drawable-hdpi\botao_notas.png
+* app\src\main\res\drawable-hdpi\botao_notas_background.xml
+* app\src\main\res\drawable-hdpi\botao_notas_click.png
+* app\src\main\res\drawable-hdpi\botao_sair2.png
+* app\src\main\res\drawable-hdpi\botao_sair_background.xml
+* app\src\main\res\drawable-hdpi\botao_sair_click.png
+* app\src\main\res\drawable-hdpi\botao_sobre.png
+* app\src\main\res\drawable-hdpi\botao_voltar.png
+* app\src\main\res\drawable-hdpi\gnu.png
+* app\src\main\res\drawable-hdpi\ic_launcher.png
+* app\src\main\res\drawable-hdpi\icone.png
+* app\src\main\res\drawable-hdpi\logo_fho.png
+* app\src\main\res\drawable-mdpi\
+* app\src\main\res\drawable-mdpi\ic_launcher.png
+* app\src\main\res\drawable-xhdpi\
+* app\src\main\res\drawable-xhdpi\ic_launcher.png
+* app\src\main\res\drawable-xxhdpi\
+* app\src\main\res\drawable-xxhdpi\ic_launcher.png
+* app\src\main\res\layout\
+* app\src\main\res\layout\activity_erro.xml
+* app\src\main\res\layout\activity_historia.xml
+* app\src\main\res\layout\activity_informacoes.xml
+* app\src\main\res\layout\activity_lista.xml
+* app\src\main\res\layout\activity_lista_.xml
+* app\src\main\res\layout\activity_localizacao.xml
+* app\src\main\res\layout\activity_login.xml
+* app\src\main\res\layout\activity_menu.xml
+* app\src\main\res\layout\activity_sobre.xml
+* app\src\main\res\layout\barra_inf_curso.xml
+* app\src\main\res\layout\barra_informacoes.xml
+* app\src\main\res\layout\barra_superior.xml
+* app\src\main\res\layout\list_item_curso.xml
+* app\src\main\res\layout\list_item_faltas.xml
+* app\src\main\res\layout\list_item_notas.xml
+* app\src\main\res\layout\list_item_semestre.xml
+* app\src\main\res\menu\
+* app\src\main\res\menu\consulta_ano_semestre.xml
+* app\src\main\res\menu\curso.xml
+* app\src\main\res\menu\erro.xml
+* app\src\main\res\menu\historia.xml
+* app\src\main\res\menu\informacoes.xml
+* app\src\main\res\menu\localizacao.xml
+* app\src\main\res\menu\login.xml
+* app\src\main\res\menu\menu.xml
+* app\src\main\res\values-sw600dp\
+* app\src\main\res\values-sw600dp\dimens.xml
+* app\src\main\res\values-sw720dp-land\
+* app\src\main\res\values-sw720dp-land\dimens.xml
+* app\src\main\res\values-v11\
+* app\src\main\res\values-v11\styles.xml
+* app\src\main\res\values-v14\
+* app\src\main\res\values-v14\styles.xml
+* app\src\main\res\values\
+* app\src\main\res\values\dimens.xml
+* app\src\main\res\values\strings.xml
+* app\src\main\res\values\styles.xml
+* app\src\main\resources\
+* app\src\main\resources\config\
+* app\src\main\resources\config\webservice1.properties
+* build.gradle
+* gradle\
+* gradle\wrapper\
+* gradle\wrapper\gradle-wrapper.jar
+* gradle\wrapper\gradle-wrapper.properties
+* gradlew
+* gradlew.bat
+* ic_launcher-web.png
+* proguard-project.txt
+* settings.gradle
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+* src\config\webservice1.properties => app\src\main\resources\config\webservice1.properties
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
