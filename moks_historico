@@ -1,7 +1,7 @@
 {
   status : "S",
   result : 
-    {
+    [{
     	materia : teste 1,
     	media : 5,
     	frequencia : 100,
@@ -27,5 +27,5 @@
     	ano letivo : 2014,
     	semestre : 1
     	periodo : 1,
-    }
+    }]
 }
