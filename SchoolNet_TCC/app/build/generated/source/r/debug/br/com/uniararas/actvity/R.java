@@ -55,10 +55,10 @@ public final class R {
         public static final int TextView08=0x7f080011;
         public static final int TextView09=0x7f08000f;
         public static final int TextView10=0x7f080012;
-        public static final int action_settings=0x7f080037;
+        public static final int action_settings=0x7f08003a;
         public static final int ano_ingresso=0x7f08002a;
         public static final int ano_semestre=0x7f080022;
-        public static final int anoletivo=0x7f080036;
+        public static final int anoletivo=0x7f080039;
         public static final int barra_inf_curso=0x7f080013;
         public static final int barra_informacao=0x7f080014;
         public static final int button1=0x7f080002;
@@ -72,21 +72,24 @@ public final class R {
         public static final int editText1=0x7f080016;
         public static final int editText2=0x7f080017;
         public static final int fb=0x7f080010;
+        public static final int frequencia=0x7f080031;
         public static final int imageView1=0x7f080015;
         public static final int imagemLogo=0x7f08001c;
         public static final int limitefaltas=0x7f08002f;
         public static final int materia=0x7f08002b;
-        public static final int mediafinal=0x7f080034;
+        public static final int media=0x7f080030;
+        public static final int mediafinal=0x7f080037;
         public static final int nome_curso=0x7f080021;
-        public static final int notaspa=0x7f080032;
+        public static final int notaspa=0x7f080035;
         public static final int numerofaltas=0x7f08002e;
-        public static final int primeiranota=0x7f080031;
+        public static final int primeiranota=0x7f080034;
         public static final int scrollView1=0x7f080003;
-        public static final int segundanota=0x7f080033;
-        public static final int semestre=0x7f080035;
+        public static final int segundanota=0x7f080036;
+        public static final int semestre=0x7f080038;
+        public static final int situacao=0x7f080032;
         public static final int tableRow1=0x7f08002c;
         public static final int tableRow2=0x7f080026;
-        public static final int tableRow3=0x7f080030;
+        public static final int tableRow3=0x7f080033;
         public static final int tableRow4=0x7f08002d;
         public static final int textView1=0x7f080000;
         public static final int textView10=0x7f080024;
@@ -113,8 +116,9 @@ public final class R {
         public static final int barra_superior=0x7f03000b;
         public static final int list_item_curso=0x7f03000c;
         public static final int list_item_faltas=0x7f03000d;
-        public static final int list_item_notas=0x7f03000e;
-        public static final int list_item_semestre=0x7f03000f;
+        public static final int list_item_historico=0x7f03000e;
+        public static final int list_item_notas=0x7f03000f;
+        public static final int list_item_semestre=0x7f030010;
     }
     public static final class menu {
         public static final int consulta_ano_semestre=0x7f070000;

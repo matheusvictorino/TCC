@@ -73,6 +73,8 @@ public interface Constantes {
 	
 	String URL_OBTER_NOTAS = "notas.php";
 
+	String URL_OBTER_HISTORICO = "notas.php";
+
 	String URL_OBTER_FALTAS = "faltas.php";
 	
 	String URL_OBTER_ANO_SEMESTRE = "ano-semestre.php";

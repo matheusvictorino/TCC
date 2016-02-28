@@ -17,11 +17,12 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.services.ConsultaFaltasService;
+import br.com.uniararas.services.ConsultarHistoricoService;
 import br.com.uniararas.util.Constantes;
 
 public class ConsultaHistoricoActivity extends ListActivity {
 
-    private ConsultaFaltasService consultaFaltasService = new ConsultaFaltasService();
+    private ConsultarHistoricoService consultarHistoricoService = new ConsultarHistoricoService();
     private String cod_curso;
     private String cod_fac;
     private String ano_ingresso;
@@ -101,7 +102,7 @@ public class ConsultaHistoricoActivity extends ListActivity {
         private Context context;
         private String anoletivo;
         private String semestre;
-        private ArrayList<HashMap<String, String>> listaMaterias;
+        private ArrayList<HashMap<String, String>> listaHistorico;
 
         public ChamadaWebService(Context context,String anoletivo,String semestre) {
             this.context = context;
@@ -119,8 +120,8 @@ public class ConsultaHistoricoActivity extends ListActivity {
         @Override
         protected String doInBackground(Integer... paramss) {
             try{
-                listaMaterias = new ArrayList<HashMap<String,String>>();
-                listaMaterias = consultaFaltasService.obterFaltas(cod_fac,cod_curso,ano_ingresso,anoletivo,semestre);
+                listaHistorico = new ArrayList<HashMap<String,String>>();
+                listaHistorico = consultarHistoricoService.obterHistorico(cod_fac,cod_curso,ano_ingresso,anoletivo,semestre);
                 return "SUCESSO";
             }catch(Exception e){
                 return e.getMessage();
@@ -136,10 +137,10 @@ public class ConsultaHistoricoActivity extends ListActivity {
                 finish();
             }
             progress.dismiss();
-            ListAdapter adapter = new SimpleAdapter(context, listaMaterias,
-                    R.layout.list_item_faltas,
-                    new String[] { Constantes.TAG_NOME_MATERIA, Constantes.TAG_NUMERO_FALTAS, Constantes.TAG_NUMERO_FALTAS_LIMITE }, new int[] {
-                    R.id.materia, R.id.numerofaltas, R.id.limitefaltas});
+            ListAdapter adapter = new SimpleAdapter(context, listaHistorico,
+                    R.layout.list_item_historico,
+                    new String[] { "materia", "media", "frequencia", "situacao" }, new int[] {
+                    R.id.materia, R.id.media, R.id.frequencia, R.id.situacao});
 
             setListAdapter(adapter);
         }
