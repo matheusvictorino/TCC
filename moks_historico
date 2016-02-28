@@ -1,0 +1,31 @@
+{
+  status : "S",
+  result : 
+    {
+    	materia : teste 1,
+    	media : 5,
+    	frequencia : 100,
+    	situacao : Aprovado,
+    	ano letivo : 2014,
+    	semestre : 1
+    	periodo : 1,
+    },
+    {
+    	materia : teste 2,
+    	media : 3,
+    	frequencia : 80,
+    	situacao : Reprovado,
+    	ano letivo : 2014,
+    	semestre : 1
+    	periodo : 1,
+    },
+    {
+    	materia : teste 3,
+    	media : 10,
+    	frequencia : 100,
+    	situacao : Aprovado,
+    	ano letivo : 2014,
+    	semestre : 1
+    	periodo : 1,
+    }
+}
