@@ -1,0 +1,17 @@
+{
+  "0": 
+    {
+      "materia": "teste 1",
+      "media": "5.0",
+      "frequencia": "100.0",
+      "situacao": "Aprovado"
+    }
+  ,
+  "1": 
+    {
+      "materia": "teste 2",
+      "media": "4.0",
+      "frequencia": "100.0",
+      "situacao": "Reprovado"
+    }
+}
