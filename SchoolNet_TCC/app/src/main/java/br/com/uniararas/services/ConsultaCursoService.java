@@ -54,7 +54,7 @@ public class ConsultaCursoService {
 			String[] resposta = webServiceCall.get(url);
 			
 			if(!resposta[0].equals("200"))
-				throw new Exception("Erro ao obter faltas.");
+				throw new Exception("Erro ao obter cursos.");
 			
 			JSONObject mainObject = new JSONObject(resposta[1].trim());
 			

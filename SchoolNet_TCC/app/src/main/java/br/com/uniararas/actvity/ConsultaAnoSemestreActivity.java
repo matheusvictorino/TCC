@@ -187,8 +187,11 @@ public class ConsultaAnoSemestreActivity extends ListActivity {
 	                Intent in = null;
 	                if(consulta.equals("notas"))
 	                	in = new Intent(getApplicationContext(), ConsultaNotasActivity.class);
-	                else
+	                else if (consulta.equals("faltas"))
 	                	in = new Intent(getApplicationContext(), ConsultaFaltasActivity.class);
+					else if (consulta.equals("historico"))
+						in = new Intent(getApplicationContext(), ConsultaHistoricoActivity.class);
+
 	        		in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
 	        		in.putExtra("anoletivo", anoletivo);
 	        		in.putExtra("semestre", semestre);

@@ -15,6 +15,10 @@
     <string name="autores">Gerson Donscoi Jr, Leandro M. M. Oliveira</string>
     <string name="desenvolvedor_dois">Leandro Motta M. Oliveira</string>
     <string name="desenvolvedor_dois_email">leandrommoliveira@gmail.com</string>
+    <string name="desenvolvedor_quatro">João Victor</string>
+    <string name="desenvolvedor_quatro_email">theu.victorino@gmail.com</string>
+    <string name="desenvolvedor_tres">Matheus Victorino</string>
+    <string name="desenvolvedor_tres_email">theu.victorino@gmail.com</string>
     <string name="desenvolvedor_um">Gerson Donscoi Junior</string>
     <string name="desenvolvedor_um_email">donscoijr@gmail.com</string>
     <string name="desenvolvedores">Desenvolvedores</string>

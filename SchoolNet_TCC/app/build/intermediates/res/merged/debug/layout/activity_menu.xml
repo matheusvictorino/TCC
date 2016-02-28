@@ -74,7 +74,7 @@
 		    android:layout_height="match_parent"
 		    android:layout_weight=".50"
 		    android:orientation="vertical" >
-			
+
 			<Button
 			    android:id="@+id/button1"
 			    android:layout_width="wrap_content"
@@ -82,7 +82,23 @@
 			    android:onClick="onClickConsultarFaltas"
 			    android:layout_gravity="center_horizontal"
 			    android:background="@drawable/botao_faltas_background"/>
-		
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight=".50"
+			android:orientation="vertical" >
+
+			<Button
+				android:id="@+id/button3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:onClick="onClickConsultarHistorico"
+				android:layout_gravity="center_horizontal"
+				android:text="Histórico"
+				/>
 		</LinearLayout>
 	</LinearLayout>
 </LinearLayout>

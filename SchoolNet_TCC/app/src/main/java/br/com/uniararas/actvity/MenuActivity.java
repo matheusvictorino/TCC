@@ -91,6 +91,14 @@ public class MenuActivity extends Activity {
 		startActivity(in);
 
 	}
+
+	public void onClickConsultarHistorico(View view) {
+		Intent in = new Intent(getApplicationContext(), ConsultaCursoActivity.class);
+		in.putExtra("aluno", new Gson().toJson(aluno));
+		in.putExtra("consulta", "historico");
+		startActivity(in);
+
+	}
 	
 	public void onClickConsultarFaltas(View view) {
 		Intent in = new Intent(getApplicationContext(), ConsultaCursoActivity.class);
