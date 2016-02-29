@@ -2,28 +2,28 @@
   "0": {
     "dia": "segunda-feira",
     "aulas": [
-      {
+      0 : {
         "inicio": "19:00",
         "termino": "19:50",
         "disciplina": "teste 1",
         "horario": "semanal",
         "sala": "lugar 1"
       },
-      {
+      1 : {
         "inicio": "19:50",
         "termino": "20:40",
         "disciplina": "teste 2",
         "horario": "semanal",
         "sala": "lugar 2"
       },
-      {
+      2 : {
         "inicio": "20:50",
         "termino": "21:40",
         "disciplina": "teste 3",
         "horario": "semanal",
         "sala": "lugar 3"
       },
-      {
+      3 : {
         "inicio": "21:50",
         "termino": "22:30",
         "disciplina": "teste 4",
@@ -35,28 +35,28 @@
   "1": {
     "dia": "terça-feira",
     "aulas": [
-      {
+      0 : {
         "inicio": "19:00",
         "termino": "19:50",
         "disciplina": "teste 5",
         "horario": "semanal",
         "sala": "lugar 1"
       },
-      {
+      1 : {
         "inicio": "19:50",
         "termino": "20:40",
         "disciplina": "teste 6",
         "horario": "semanal",
         "sala": "lugar 2"
       },
-      {
+      2 : {
         "inicio": "20:50",
         "termino": "21:40",
         "disciplina": "teste 7",
         "horario": "semanal",
         "sala": "lugar 3"
       },
-      {
+      3 : {
         "inicio": "21:50",
         "termino": "22:30",
         "disciplina": "teste 8",
