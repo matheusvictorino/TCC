@@ -1,7 +1,7 @@
 {
   "0": {
     "dia": "segunda-feira",
-    "aulas": [
+    "aulas": {
       0 : {
         "inicio": "19:00",
         "termino": "19:50",
@@ -30,11 +30,11 @@
         "horario": "semanal",
         "sala": "lugar 4"
       }
-    ]
+    }
   },
   "1": {
     "dia": "terça-feira",
-    "aulas": [
+    "aulas": {
       0 : {
         "inicio": "19:00",
         "termino": "19:50",
@@ -63,6 +63,6 @@
         "horario": "semanal",
         "sala": "lugar 4"
       }
-    ]
+    }
   }
 }
