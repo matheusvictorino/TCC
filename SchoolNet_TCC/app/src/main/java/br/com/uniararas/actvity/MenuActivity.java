@@ -99,6 +99,13 @@ public class MenuActivity extends Activity {
 		startActivity(in);
 
 	}
+
+	public void onClickConsultarHorarios(View view) {
+		Intent in = new Intent(getApplicationContext(), ConsultaHorarioActivity.class);
+		in.putExtra("aluno", new Gson().toJson(aluno));
+		startActivity(in);
+
+	}
 	
 	public void onClickConsultarFaltas(View view) {
 		Intent in = new Intent(getApplicationContext(), ConsultaCursoActivity.class);

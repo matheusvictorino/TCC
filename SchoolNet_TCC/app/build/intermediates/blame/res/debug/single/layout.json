@@ -16,6 +16,10 @@
         "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_sobre.xml"
     },
     {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_horario_aula.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\list_item_horario_aula.xml"
+    },
+    {
         "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_informacoes.xml",
         "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\layout\\activity_informacoes.xml"
     },

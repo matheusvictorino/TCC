@@ -164,6 +164,8 @@ public class WebServiceCall {
 		try {
 			if (url == "teste") {
 				url = "https://raw.githubusercontent.com/matheusvictorino/TCC/historico/moks_historico";
+			} else if (url == "teste 2") {
+				url = "https://raw.githubusercontent.com/matheusvictorino/TCC/historico/mok_horario_aula";
 			} else {
 				url = this.props.getProperty(Constantes.URL_PADRAO) + url;
 			}
