@@ -1,0 +1,68 @@
+{
+  {
+    "dia": "segunda",
+    "horarios": [
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      },
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      },
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      },
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      }
+    ]
+  },
+  {
+    "dia": "terça",
+    "horarios": [
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      },
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      },
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      },
+      {
+        "inicio": "19:00",
+        "termino": "20:00",
+        "disciplina": "teste 1",
+        "horario": "semanal",
+        "sala": "lugar 1"
+      }
+    ]
+  }
+}
