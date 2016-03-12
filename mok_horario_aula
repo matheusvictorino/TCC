@@ -1,5 +1,5 @@
 {
-  {
+  "0" : {
     "dia": "segunda",
     "horarios": [
       {
@@ -32,7 +32,7 @@
       }
     ]
   },
-  {
+  "1" : {
     "dia": "terça",
     "horarios": [
       {
