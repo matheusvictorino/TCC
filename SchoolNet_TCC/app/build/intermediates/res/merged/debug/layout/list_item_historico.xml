@@ -42,7 +42,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:layout_weight=".50"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:text="Média"
                     android:textColor="#acacac"
                     android:textStyle="bold" />
@@ -53,7 +53,7 @@
                     android:layout_weight=".50"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:text="Frequência"
                     android:textColor="#acacac"
                     android:textStyle="bold" />
@@ -64,7 +64,7 @@
                     android:layout_weight=".50"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:text="Situação"
                     android:textColor="#acacac"
                     android:textStyle="bold" />
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight=".50"
                     android:layout_gravity="center"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:textColor="#5d5d5d"
                     android:textStyle="bold" />
 
@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight=".50"
                     android:layout_gravity="center"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:textColor="#5d5d5d"
                     android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight=".50"
                     android:layout_gravity="center"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:textColor="#5d5d5d"
                     android:textStyle="bold" />
 
