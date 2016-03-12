@@ -3,28 +3,28 @@
     {
       "dia": "segunda",
       "horarios": [
-        {
+        "0" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
           "horario": "semanal",
           "sala": "lugar 1"
         },
-        {
+        "1" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
           "horario": "semanal",
           "sala": "lugar 1"
         },
-        {
+        "2" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
           "horario": "semanal",
           "sala": "lugar 1"
         },
-        {
+        "3" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
@@ -36,28 +36,28 @@
     {
       "dia": "terça",
       "horarios": [
-        {
+        "0" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
           "horario": "semanal",
           "sala": "lugar 1"
         },
-        {
+        "1" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
           "horario": "semanal",
           "sala": "lugar 1"
         },
-        {
+        "2" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
           "horario": "semanal",
           "sala": "lugar 1"
         },
-        {
+        "3" : {
           "inicio": "19:00",
           "termino": "20:00",
           "disciplina": "teste 1",
