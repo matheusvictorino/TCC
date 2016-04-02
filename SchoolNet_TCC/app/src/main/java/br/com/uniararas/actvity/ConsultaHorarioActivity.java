@@ -50,12 +50,18 @@ public class ConsultaHorarioActivity extends ListActivity {
         textEmail.setText(MenuActivity.aluno.email);
 
 
-        String anoletivo = "nhenhenhe";
-        String semestre = "mimimi";
+        Intent intent = getIntent();
+        cod_curso = intent.getStringExtra("cod_curso");
+        cod_fac = intent.getStringExtra("cod_fac");
+        ano_ingresso = intent.getStringExtra("ano_ingresso");
+        cursoNome = intent.getStringExtra("descricao_curso");
+        int anoletivo = 2016;
+        nomeCurso.setText(cursoNome);
+
         nomeCurso.setText(cursoNome);
 
         try{
-            ChamadaWebService chamadaWebService = new ChamadaWebService(this,anoletivo,semestre);
+            ChamadaWebService chamadaWebService = new ChamadaWebService(this,anoletivo);
             chamadaWebService.execute(0,0,0);
         }catch(Exception e){
             Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
@@ -97,14 +103,13 @@ public class ConsultaHorarioActivity extends ListActivity {
 
         private ProgressDialog progress;
         private Context context;
-        private String anoletivo;
+        private int anoletivo;
         private String semestre;
         private ArrayList<GrupoHorario> listaHorarios;
 
-        public ChamadaWebService(Context context,String anoletivo,String semestre) {
+        public ChamadaWebService(Context context,int anoletivo) {
             this.context = context;
             this.anoletivo = anoletivo;
-            this.semestre = semestre;
         }
 
         @Override
@@ -138,13 +143,6 @@ public class ConsultaHorarioActivity extends ListActivity {
 
             ListView listView = (ListView) findViewById(android.R.id.list);
             listView.setAdapter(adapter);
-
-//            ListAdapter adapter = new SimpleAdapter(context, listaHorarios,
-//                    R.layout.list_item_horario_aula,
-//                    new String[] { "dia", "aulas", }, new int[] {
-//                    R.id.dia});
-
-//            setListAdapter(adapter);
         }
 
     }

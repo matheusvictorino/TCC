@@ -73,7 +73,9 @@ public interface Constantes {
 	
 	String URL_OBTER_NOTAS = "notas.php";
 
-	String URL_OBTER_HISTORICO = "notas.php";
+	String URL_OBTER_HISTORICO = "historico.php";
+
+	String URL_OBTER_HORARIO_AULA = "horario_aula.php";
 
 	String URL_OBTER_FALTAS = "faltas.php";
 	
@@ -86,7 +88,7 @@ public interface Constantes {
 	String URL_ANO_LETIVO = "anoletivo";
 	
 	String URL_SEMESTRE = "semestre";
-	
+
 	String SELECIONE_CURSO = "Selecione o curso";
 
 	String SELECIONE_ANO_SEMESTRE = "Selecione o semestre e ano";
@@ -96,4 +98,6 @@ public interface Constantes {
 	String LINK_UNIARARAS = "https://www.uniararas.br";
 	
 	String ERRO_LOGIN = "Não foi possível efetuar login";
+
+
 }

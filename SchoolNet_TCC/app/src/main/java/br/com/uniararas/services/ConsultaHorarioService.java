@@ -17,10 +17,10 @@ import br.com.uniararas.util.Constantes;
  */
 public class ConsultaHorarioService {
 
-    public ArrayList<GrupoHorario> obterHorario(String cod_fac, String cod_curso, String ano_ingresso,String ano ,String semestre) throws Exception {
+    public ArrayList<GrupoHorario> obterHorario(String cod_fac, String cod_curso, String ano_ingresso,int ano ,String semestre) throws Exception {
         ArrayList<GrupoHorario> listaHorarios = new ArrayList<GrupoHorario>();
         try {
-            String url = Constantes.URL_OBTER_HISTORICO +
+            String url = Constantes.URL_OBTER_HORARIO_AULA +
                     "?cod_fac=" +
                     cod_fac + "&cod_curso=" +
                     cod_curso + "&ano_ingresso=" +
@@ -28,80 +28,10 @@ public class ConsultaHorarioService {
                     ano + "&semestre=" + semestre;
 
             WebServiceCall webServiceCall = WebServiceCall.getInstance();
-            String[] resposta = webServiceCall.get("teste 2");
+            String[] resposta = webServiceCall.get(url);
 
             if(!resposta[0].equals("200"))
                 throw new Exception("Erro ao obter horários de aula.");
-
-//            String str = "{\n" +
-//                    "  \"0\" : {\n" +
-//                    "    \"dia\": \"segunda\",\n" +
-//                    "    \"horarios\": [\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      },\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      },\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      },\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      }\n" +
-//                    "    ]\n" +
-//                    "  },\n" +
-//                    "  \"1\" : {\n" +
-//                    "    \"dia\": \"terça\",\n" +
-//                    "    \"horarios\": [\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      },\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      },\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      },\n" +
-//                    "      {\n" +
-//                    "        \"inicio\": \"19:00\",\n" +
-//                    "        \"termino\": \"20:00\",\n" +
-//                    "        \"disciplina\": \"testetesteteste testeteste\",\n" +
-//                    "        \"horario\": \"semanal\",\n" +
-//                    "        \"sala\": \"lugar 1\"\n" +
-//                    "      }\n" +
-//                    "    ]\n" +
-//                    "  }\n" +
-//                    "}";
-
 
             JSONObject mainObject = new JSONObject(resposta[1].toString().trim());
 

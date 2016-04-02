@@ -162,13 +162,7 @@ public class WebServiceCall {
 	public final String[] get(String url) throws Exception {
 		String[] result = new String[2];
 		try {
-			if (url == "teste") {
-				url = "https://raw.githubusercontent.com/matheusvictorino/TCC/historico/moks_historico";
-			} else if (url == "teste 2") {
-				url = "https://raw.githubusercontent.com/matheusvictorino/TCC/historico/mok_horario_aula";
-			} else {
-				url = this.props.getProperty(Constantes.URL_PADRAO) + url;
-			}
+			url = this.props.getProperty(Constantes.URL_PADRAO) + url;
 
 			HttpGet httpGet = new HttpGet(new URI(url));
 			httpGet.setHeader("Content-type", "application/json");

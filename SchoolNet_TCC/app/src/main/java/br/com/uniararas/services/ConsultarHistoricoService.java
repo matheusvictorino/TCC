@@ -25,7 +25,7 @@ public class ConsultarHistoricoService {
                     ano + "&semestre=" + semestre;
 
             WebServiceCall webServiceCall = WebServiceCall.getInstance();
-            String[] resposta = webServiceCall.get("teste");
+            String[] resposta = webServiceCall.get(url);
 
             if(!resposta[0].equals("200"))
                 throw new Exception("Erro ao obter histórico.");
