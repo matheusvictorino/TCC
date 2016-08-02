@@ -3,6 +3,7 @@ package br.com.uniararas.services;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -10,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.com.uniararas.beans.GrupoHorario;
+import br.com.uniararas.beans.Horario;
 import br.com.uniararas.resources.WebServiceCall;
 import br.com.uniararas.util.Constantes;
 /**
@@ -39,12 +41,28 @@ public class ConsultaHorarioService {
             Iterator<String> keys = mainObject.keys();
             while(keys.hasNext()){
                 String key = keys.next();
-                GrupoHorario grupoHorario = new Gson().fromJson(mainObject.getString(key), GrupoHorario.class);
+                // GrupoHorario grupoHorario = new Gson().fromJson(mainObject.getString(key), GrupoHorario.class);
+                GrupoHorario grupoHorario = new GrupoHorario();
+                grupoHorario.setDia(mainObject.getJSONObject(key).getString("dia"));
+                grupoHorario.setIndex(Integer.parseInt(key));
+                grupoHorario.setHorarios(new ArrayList());
+
+                String horariosJson = mainObject.getJSONObject(key).getString("horarios");
+                JSONObject horarios = new JSONObject(horariosJson);
+                Iterator<String> keysHorario = horarios.keys();
+
+                while(keysHorario.hasNext()){
+                    String keyHorario = keysHorario.next();
+                    Horario horario = new Gson().fromJson(horarios.getString(keyHorario), Horario.class);
+                    horario.setIndex(Integer.parseInt(keyHorario));
+                    grupoHorario.getHorarios().add(horario);
+                }
 
                 listaHorarios.add(grupoHorario);
             }
 
-        }catch (JSONException e) {
+            Collections.sort(listaHorarios);
+    }catch (JSONException e) {
             throw new JSONException("Não foi possivel exibir os dados.");
         } catch (Exception e) {
             throw new JSONException(e.getMessage());

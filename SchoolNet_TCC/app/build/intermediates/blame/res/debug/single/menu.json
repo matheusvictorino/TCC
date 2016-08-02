@@ -1,34 +1,34 @@
 [
     {
-        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\informacoes.xml",
-        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\informacoes.xml"
-    },
-    {
         "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\erro.xml",
         "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\erro.xml"
-    },
-    {
-        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\localizacao.xml",
-        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\localizacao.xml"
-    },
-    {
-        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\curso.xml",
-        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\curso.xml"
-    },
-    {
-        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\historia.xml",
-        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\historia.xml"
     },
     {
         "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu.xml",
         "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\menu.xml"
     },
     {
-        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\consulta_ano_semestre.xml",
-        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\consulta_ano_semestre.xml"
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\informacoes.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\informacoes.xml"
     },
     {
         "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\login.xml",
         "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\login.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\localizacao.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\localizacao.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\historia.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\historia.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\consulta_ano_semestre.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\consulta_ano_semestre.xml"
+    },
+    {
+        "merged": "D:\\TCC\\SchoolNet_TCC\\app\\build\\intermediates\\res\\merged\\debug\\menu\\curso.xml",
+        "source": "D:\\TCC\\SchoolNet_TCC\\app\\src\\main\\res\\menu\\curso.xml"
     }
 ]

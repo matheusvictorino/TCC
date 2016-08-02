@@ -98,8 +98,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
-                android:onClick="onClickLogin"
-                android:background="@drawable/botao_login_background" />
+                android:minHeight="50dp"
+                android:minWidth="150dp"
+                android:background="#32849a"
+                android:textColor="#ffffff"
+                android:text="Login"
+                android:onClick="onClickLogin" />
 
             <Button
                 android:id="@+id/Button01"
@@ -107,7 +111,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/botao_informacoes"
+                android:minHeight="50dp"
+                android:minWidth="150dp"
+                android:background="#32849a"
+                android:textColor="#ffffff"
+                android:text="Informações"
                 android:onClick="onClickInfromacoes" />
 
         </LinearLayout>

@@ -54,16 +54,13 @@ public class GrupoHorarioAdapter extends BaseAdapter {
 
         TextView horario = (TextView) convertView.findViewById(R.id.horario);
         TextView disciplina = (TextView) convertView.findViewById(R.id.disciplina);
-        TextView sala = (TextView) convertView.findViewById(R.id.sala);
 
         horario.setText("");
         disciplina.setText("");
-        sala.setText("");
 
         for (Horario hr : items.get(position).getHorarios()) {
             horario.append(hr.getInicio() + " - " + hr.getTermino() + "\n");
             disciplina.append(hr.getDisciplina()+ "\n");
-            sala.append(hr.getSala() + "\n");
         }
 
         return convertView;

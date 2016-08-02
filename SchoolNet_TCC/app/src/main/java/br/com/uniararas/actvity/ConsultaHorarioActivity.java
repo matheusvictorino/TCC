@@ -1,6 +1,7 @@
 package br.com.uniararas.actvity;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import android.app.ListActivity;
@@ -55,7 +56,10 @@ public class ConsultaHorarioActivity extends ListActivity {
         cod_fac = intent.getStringExtra("cod_fac");
         ano_ingresso = intent.getStringExtra("ano_ingresso");
         cursoNome = intent.getStringExtra("descricao_curso");
-        int anoletivo = 2016;
+
+        Calendar calendar = Calendar.getInstance();
+        int anoletivo = calendar.get(Calendar.YEAR);
+
         nomeCurso.setText(cursoNome);
 
         nomeCurso.setText(cursoNome);

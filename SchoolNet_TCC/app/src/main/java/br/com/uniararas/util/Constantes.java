@@ -75,6 +75,8 @@ public interface Constantes {
 
 	String URL_OBTER_HISTORICO = "historico.php";
 
+	String URL_OBTER_PROTOCOLO_CLICK = "historico.php";
+
 	String URL_OBTER_HORARIO_AULA = "horario_aula.php";
 
 	String URL_OBTER_FALTAS = "faltas.php";
@@ -90,6 +92,8 @@ public interface Constantes {
 	String URL_SEMESTRE = "semestre";
 
 	String SELECIONE_CURSO = "Selecione o curso";
+
+	String SELECIONE_PROTOCOLO = "Selecione o protocolo";
 
 	String SELECIONE_ANO_SEMESTRE = "Selecione o semestre e ano";
 	

@@ -71,8 +71,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:background="@drawable/botao_voltar"
-        android:gravity="center_horizontal"
+        android:minHeight="50dp"
+        android:minWidth="150dp"
+        android:background="#32849a"
+        android:textColor="#ffffff"
+        android:text="Voltar"
         android:onClick="onClickMenu" />
 
 </LinearLayout>

@@ -173,15 +173,26 @@ public class ConsultaCursoActivity extends ListActivity {
 		                String cod_fac = ((TextView) view.findViewById(R.id.cod_fac)).getText().toString();
 		                String ano_ingresso = ((TextView) view.findViewById(R.id.ano_ingresso)).getText().toString();
 		                String descricao_curso = ((TextView) view.findViewById(R.id.curso)).getText().toString();
-		                
-		                Intent in = null;
-	                	in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
-		        		in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
-		        		in.putExtra("consulta", consulta);
-		        		in.putExtra("cod_curso", cod_curso);
-		        		in.putExtra("cod_fac", cod_fac);
-		        		in.putExtra("ano_ingresso", ano_ingresso);
-		        		in.putExtra("descricao_curso", descricao_curso);
+
+						Intent in = null;
+						if (consulta.equals("horario")) {
+							in = new Intent(getApplicationContext(), ConsultaHorarioActivity.class);
+							in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
+							in.putExtra("consulta", consulta);
+							in.putExtra("cod_curso", cod_curso);
+							in.putExtra("cod_fac", cod_fac);
+							in.putExtra("ano_ingresso", ano_ingresso);
+							in.putExtra("descricao_curso", descricao_curso);
+						} else {
+							in = new Intent(getApplicationContext(), ConsultaAnoSemestreActivity.class);
+							in.putExtra("aluno", new Gson().toJson(MenuActivity.aluno));
+							in.putExtra("consulta", consulta);
+							in.putExtra("cod_curso", cod_curso);
+							in.putExtra("cod_fac", cod_fac);
+							in.putExtra("ano_ingresso", ano_ingresso);
+							in.putExtra("descricao_curso", descricao_curso);
+						}
+
 		        		startActivity(in);
 		            }
 		        });

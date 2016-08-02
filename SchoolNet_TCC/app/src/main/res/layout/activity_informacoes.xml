@@ -115,14 +115,22 @@
                     android:id="@+id/button1"
                 	style="@style/InfoAlignStyle"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/botao_localizacao"
+                    android:minHeight="50dp"
+                    android:minWidth="150dp"
+                    android:background="#32849a"
+                    android:textColor="#ffffff"
+                    android:text="Localização"
                     android:onClick="onClickLocalizacao" />
 
                 <Button
                     android:id="@+id/Button02"
                		style="@style/InfoAlignStyle"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/botao_historia_uniararas"
+                    android:minHeight="50dp"
+                    android:minWidth="150dp"
+                    android:background="#32849a"
+                    android:textColor="#ffffff"
+                    android:text="História Uniararas"
                     android:onClick="onClickHistoria" />
 
             </LinearLayout>
@@ -224,7 +232,11 @@
                         android:id="@+id/Button03"
                         style="@style/InfoAlignStyle"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/botao_sobre"
+                        android:minHeight="50dp"
+                        android:minWidth="150dp"
+                        android:background="#32849a"
+                        android:textColor="#ffffff"
+                        android:text="Sobre"
                         android:onClick="onClickSobre" />
                 </LinearLayout>
             </LinearLayout>

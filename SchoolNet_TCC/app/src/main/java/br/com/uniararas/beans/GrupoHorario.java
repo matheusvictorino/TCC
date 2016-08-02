@@ -5,8 +5,18 @@ import java.util.ArrayList;
 /**
  * Created by theuv on 12/03/2016.
  */
-public class GrupoHorario {
+public class GrupoHorario implements Comparable<GrupoHorario> {
+    private int index;
     private String dia;
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
     private ArrayList<Horario> horarios;
 
     public String getDia() {
@@ -23,5 +33,18 @@ public class GrupoHorario {
 
     public void setHorarios(ArrayList<Horario> horarios) {
         this.horarios = horarios;
+    }
+
+    @Override
+    public int compareTo(GrupoHorario another) {
+        if (another.getIndex() > this.getIndex()) {
+            return -1;
+        }
+
+        if (another.getIndex() < this.getIndex()) {
+            return 1;
+        }
+
+        return 0;
     }
 }

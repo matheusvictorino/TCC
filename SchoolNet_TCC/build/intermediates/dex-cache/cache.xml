@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Program Files\Android\Android Studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="D:\TCC\SchoolNet_TCC\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_313aff129984a0a45e086871ec03bfcc02e7284e\classes.dex" />
+    </item>
+    <item
+        jar="D:\TCC\SchoolNet_TCC\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3ae39d2939841f2b541591afe12d7a215ca0d14f">
+        <dex dex="D:\TCC\SchoolNet_TCC\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_75a0eda675c1101a7053e577e4269f20f9de5132\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\theuv\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="D:\TCC\SchoolNet_TCC\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_1c4516b02f2b777945e6585b997b08616246e868\classes.dex" />
+    </item>
+    <item
+        jar="D:\TCC\SchoolNet_TCC\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fd8fe13c48f4ad49c13632e3155cb49e69ec3b10">
+        <dex dex="D:\TCC\SchoolNet_TCC\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_68a2b29d9d2153bc2ea8c36557f1fb4261820a4a\classes.dex" />
+    </item>
+
+</items>
